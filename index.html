@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Siddesh Sule — Websites, Social &amp; Travel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Siddesh Sule (Sidd) — aviation student at Chandigarh University, web developer, social media manager and travel creator.">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&amp;family=Archivo:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0A0A}
+a{color:#F5F3EE}a:hover{color:#FFFFFF}
+.disp{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em}
+
+.pop{display:inline-block;opacity:0;transform:translateY(60%) scale(.6) rotate(-6deg);animation:pop .8s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes pop{to{opacity:1;transform:none}}
+.caret{display:inline-block;width:.08em;height:.8em;background:currentColor;margin-left:.04em;vertical-align:-.04em;animation:caret .8s steps(2,start) infinite}
+@keyframes caret{to{visibility:hidden}}
+.strike{position:relative}
+.strike::after{content:'';position:absolute;left:-2%;right:-2%;top:52%;height:.09em;background:var(--accent);transform-origin:left;transform:scaleX(0);transition:transform .35s cubic-bezier(.7,0,.3,1)}
+.strike.on::after{transform:scaleX(1)}
+
+.badge{animation:spin 12s linear infinite;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bob{animation:bob 5s ease-in-out infinite}
+.bob2{animation-delay:-1.6s}.bob3{animation-delay:-3.2s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-18px) rotate(calc(var(--r) + 3deg))}}
+.wiggle{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.wiggle:hover{transform:rotate(-6deg) scale(1.12)}
+
+.marquee{display:flex;width:max-content;animation:marq 18s linear infinite}
+.marquee-slow{animation-duration:30s}
+.marquee-rev{animation-direction:reverse}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+.srow{transition:padding-left .45s cubic-bezier(.16,1,.3,1),color .3s}
+.srow:hover{padding-left:40px;color:var(--accent)}
+.srow .plus{transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.srow:hover .plus{transform:rotate(135deg) scale(1.2)}
+.preview{position:absolute;left:0;top:0;width:280px;height:340px;margin:-170px 0 0 -140px;border-radius:20px;pointer-events:none;z-index:20;transition:transform .25s cubic-bezier(.16,1,.3,1),opacity .25s,background .3s}
+
+.work{transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.work:hover{transform:rotate(-1.5deg) scale(1.02)}
+.work .img{transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.work:hover .img{transform:scale(1.1) rotate(2deg)}
+.work .chip{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.work:hover .chip{transform:translateY(-6px) rotate(-4deg)}
+
+.btn{transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.btn:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 #F5F3EE}
+.city{transition:background .35s,color .35s,padding .45s cubic-bezier(.16,1,.3,1)}
+.city:hover{background:#F5F3EE;color:#0A0A0A;padding-left:28px}
+.lens-track{animation-duration:55s}
+.lens-wrap:hover .lens-track{animation-play-state:paused}
+.lens-card{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.lens-card:hover{transform:rotate(0) scale(1.08) !important;z-index:3}
+.lens-card img{transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.lens-card:hover img{transform:scale(1.1)}
+.podrun{animation:podrun 3.2s cubic-bezier(.7,0,.3,1) infinite;opacity:.85}
+@keyframes podrun{0%{transform:translateX(-30%);opacity:0}10%{opacity:.85}90%{opacity:.85}100%{transform:translateX(480%);opacity:0}}
+.scan{animation:scan 4s linear infinite}
+@keyframes scan{from{left:0}to{left:100%}}
+.badgepic img{transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.badgepic:hover img{transform:scale(1.08)}
+.blink{animation:blink 1s steps(2,start) infinite}
+.route-anim{animation:routeDash 1.6s linear infinite}
+@keyframes routeDash{to{stroke-dashoffset:-28}}
+.pin-ring{animation:pinPing 2.4s ease-out infinite}
+.candle{transform-origin:center bottom;animation:candle 2.8s cubic-bezier(.34,1.56,.64,1) infinite}
+@keyframes candle{0%{transform:scaleY(.2);opacity:0}20%,85%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+@keyframes pinPing{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+.pin{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.pin:hover,.pin:focus-visible{transform:scale(1.35);z-index:5}
+@keyframes blink{to{visibility:hidden}}
+
+@supports (animation-timeline: view()){
+  .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+  .zp{animation:zp linear both;animation-timeline:view()}
+  .slant{animation:slant linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+  .giant{animation:giant linear both;animation-timeline:view();animation-range:entry 0% cover 100%}
+}
+@keyframes rv{from{opacity:0;transform:translateY(90px) rotate(3deg)}to{opacity:1;transform:none}}
+@keyframes zp{0%{opacity:.1;transform:scale(.4) rotate(-12deg)}30%{opacity:1;transform:scale(1.08) rotate(2deg)}40%,100%{opacity:1;transform:none}}
+@keyframes slant{from{transform:rotate(-8deg) scale(.85)}to{transform:rotate(0) scale(1)}}
+@keyframes giant{from{letter-spacing:.3em;opacity:.3}to{letter-spacing:-0.02em;opacity:1}}
+
+@media (hover:none){.preview{display:none}}
+@media (max-width:760px){.hero-collage{position:relative !important;right:auto !important;top:auto !important;width:100% !important;max-width:420px;height:440px !important;margin:40px auto 0}.nav-links a:not(.btn){display:none}}
+@media (prefers-reduced-motion:reduce){*,*::after{animation:none !important;transition:none !important}.pop{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="--accent: {{accent}}; position: relative; background: #0A0A0A; color: #F5F3EE; font-family: 'Archivo', system-ui, sans-serif; overflow-x: clip">
+
+<!-- NAV -->
+<nav style="position: sticky; top: 0; z-index: 30; background: #0A0A0A; border-bottom: 1px solid #222; padding: 16px clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<a class="disp wiggle" href="#top" style="font-size: 30px; text-decoration: none; display: inline-block">SIDD<span style="color: {{accent}}">*</span></a>
+<div class="nav-links" style="display: flex; gap: 26px; align-items: center; font-size: 15px; font-weight: 500; flex-wrap: wrap">
+<a href="#specialisms" style="text-decoration: none">Specialisms</a>
+<a href="#work" style="text-decoration: none">Work</a>
+<a href="#events" style="text-decoration: none">Events</a>
+<a href="#travel" style="text-decoration: none">Travel</a>
+<a href="#about" style="text-decoration: none">About</a>
+<a class="btn" href="#contact" style="background: {{accent}}; color: #0A0A0A; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 700; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Let's talk</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<header id="top" style="position: relative; padding: clamp(60px, 8vw, 110px) clamp(20px, 4vw, 48px) 80px; min-height: 640px">
+<div class="disp" style="font-size: clamp(64px, 12.5vw, 210px); line-height: 0.86; position: relative; z-index: 2">
+<div><span class="pop" style="animation-delay: .1s">Bye</span> <span class="pop" style="animation-delay: .2s">bye</span></div>
+<div style="color: #6A6862; min-height: 0.86em; white-space: nowrap"><span class="strike {{strikeCls}}">{{typed}}</span><span class="caret"></span></div>
+<div><span class="pop" style="animation-delay: .5s">hello</span> <span class="pop" style="animation-delay: .65s; color: {{accent}}">Sidd.</span></div>
+</div>
+<p style="margin: 34px 0 0; max-width: 480px; font-size: 19px; line-height: 1.5; color: #CFCBC2; position: relative; z-index: 2">Websites, social media and Hinglish travel content for desi brands that want to be <strong style="color: #F5F3EE">seen</strong> — made by an aviation student who doesn't do boring.</p>
+
+<div class="hero-collage" aria-hidden="true" style="position: absolute; right: clamp(10px, 5vw, 80px); top: 40px; width: min(40vw, 460px); height: 520px; z-index: 1">
+<div class="bob" style="--r: -8deg; position: absolute; right: 30%; top: 30px; width: 54%; aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 5px solid #FFD23F; box-sizing: border-box; box-shadow: 0 30px 60px rgba(0,0,0,.5)"><img src="images/paraglide.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 35%"></div>
+<div class="bob bob2" style="--r: 7deg; position: absolute; right: 0; top: 150px; width: 48%; aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 5px solid #7AA7FF; box-sizing: border-box; box-shadow: 0 30px 60px rgba(0,0,0,.5)"><img src="images/surf.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 70%"></div>
+<div class="bob bob3" style="--r: -3deg; position: absolute; right: 38%; top: 300px; width: 44%; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; border: 5px solid #FF8FC7; box-sizing: border-box; box-shadow: 0 30px 60px rgba(0,0,0,.5)"><img src="images/nako.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 60%"></div>
+<svg class="badge" width="150" height="150" viewBox="0 0 150 150" style="position: absolute; left: -20px; top: 230px">
+<defs><path id="circ" d="M75 75 m-55 0 a55 55 0 1 1 110 0 a55 55 0 1 1 -110 0"></path></defs>
+<circle cx="75" cy="75" r="72" fill="{{accent}}"></circle>
+<text fill="#0A0A0A" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ">OPEN FOR WORK • OPEN FOR WORK • </textPath></text>
+<path d="M60 75 L90 75 M78 63 L90 75 L78 87" stroke="#0A0A0A" stroke-width="4" fill="none" stroke-linecap="round"></path>
+</svg>
+</div>
+</header>
+
+<!-- LOUD MARQUEES -->
+<div style="transform: rotate(-3deg); margin: 0 -40px; position: relative; z-index: 3">
+<div style="background: {{accent}}; color: #0A0A0A; padding: 14px 0; overflow: hidden">
+<div class="marquee disp">
+<sc-for list="{{loudLoop}}" as="t" hint-placeholder-count="10">
+<span style="font-size: clamp(34px, 4.4vw, 60px); padding: 0 24px; white-space: nowrap">{{t.t}} <span style="color: #F5F3EE">✺</span></span>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="transform: rotate(2deg); margin: -10px -40px 0; position: relative; z-index: 2">
+<div style="background: #F5F3EE; color: #0A0A0A; padding: 12px 0; overflow: hidden">
+<div class="marquee marquee-rev marquee-slow disp">
+<sc-for list="{{quietLoop}}" as="t" hint-placeholder-count="10">
+<span style="font-size: clamp(22px, 2.6vw, 34px); padding: 0 22px; white-space: nowrap">{{t.t}} ✦</span>
+</sc-for>
+</div>
+</div>
+</div>
+
+<!-- SPECIALISMS -->
+<section id="specialisms" onMouseMove="{{onMove}}" onMouseLeave="{{leaveList}}" style="position: relative; padding: clamp(100px, 12vw, 170px) clamp(20px, 4vw, 48px) 80px">
+<div class="preview" style="transform: {{prevT}}; opacity: {{prevO}}; background: {{prevBg}}; display: flex; flex-direction: column; justify-content: space-between; padding: 22px; box-sizing: border-box; color: #0A0A0A">
+<span style="font-weight: 700; font-size: 13px">{{prevTag}}</span>
+<span class="disp" style="font-size: 44px; line-height: .9">{{prevWord}}</span>
+</div>
+<div class="rv" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 30px">
+<h2 class="disp" style="margin: 0; font-size: clamp(48px, 7vw, 110px); line-height: .9">Specialisms</h2>
+<p style="margin: 0; max-width: 360px; color: #CFCBC2; font-size: 17px; line-height: 1.5">Hover a row. Everything I do for brands, in one loud list.</p>
+</div>
+<div style="border-top: 2px solid #F5F3EE">
+<sc-for list="{{specs}}" as="s" hint-placeholder-count="5">
+<a class="srow rv" href="#contact" onMouseEnter="{{s.enter}}" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; border-bottom: 2px solid #F5F3EE; text-decoration: none; color: #F5F3EE">
+<span style="display: flex; align-items: baseline; gap: 22px">
+<span style="font-size: 14px; font-weight: 700">{{s.num}}</span>
+<span class="disp" style="font-size: clamp(44px, 7.4vw, 120px); line-height: .9">{{s.title}}</span>
+</span>
+<svg class="plus" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6 V42 M6 24 H42" stroke="currentColor" stroke-width="4"></path></svg>
+</a>
+</sc-for>
+</div>
+</section>
+
+<!-- ABOUT PITCH -->
+<section id="about" style="padding: 100px clamp(20px, 4vw, 48px) 120px; text-align: center">
+<h2 class="disp" style="margin: 0 auto; max-width: 1300px; font-size: clamp(54px, 9vw, 150px); line-height: .88">
+<sc-for list="{{pitch}}" as="p" hint-placeholder-count="8"><span class="zp" style="display: inline-block; margin: 0 .12em; color: {{p.color}}; animation-range: {{p.range}}">{{p.t}}</span></sc-for>
+</h2>
+<p class="rv" style="margin: 36px auto 0; max-width: 620px; font-size: 19px; line-height: 1.6; color: #CFCBC2">I'm Siddesh — studying BSc Airlines &amp; Airport Management at Chandigarh University, and running a small digital consultancy for clients in India and abroad. On Instagram I make travel and aviation reels in Hinglish. Off the screen, I'm a Technical Coordinator and have managed two events so far, with more coming up — and I trade the markets on the side. I've also completed HEC Paris's Entrepreneurship Strategy course on Coursera, and I'm currently building a 1:50 Hyperloop pod-and-tube concept model. Next stop: an MBA in Aviation Management.</p>
+<div class="rv" style="margin-top: 36px"><a class="btn" href="#contact" style="display: inline-flex; align-items: center; background: #F5F3EE; color: #0A0A0A; padding: 18px 30px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Work with me</a></div>
+</section>
+
+<!-- WORK -->
+<section id="work" style="padding: 40px clamp(20px, 4vw, 48px) 120px">
+<h2 class="disp rv" style="margin: 0 0 40px; font-size: clamp(48px, 7vw, 110px); line-height: .9">The work<span style="color: {{accent}}">.</span></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px">
+<sc-for list="{{work}}" as="w" hint-placeholder-count="4">
+<div class="work slant" style="display: block; color: #F5F3EE">
+<div style="aspect-ratio: 5 / 4; border-radius: 26px; overflow: hidden; position: relative; background: {{w.bg}}">
+<sc-if value="{{w.img}}" hint-placeholder-val="{{ true }}">
+<img class="img" src="{{w.img}}" alt="{{w.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{w.fit}}; object-position: {{w.pos}}">
+</sc-if>
+<sc-if value="{{w.play}}" hint-placeholder-val="{{ false }}">
+<span aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; display: flex; align-items: center; justify-content: center">
+<span class="pin-ring" style="position: absolute; width: 76px; height: 76px; border-radius: 50%; border: 3px solid #F5F3EE"></span>
+<span style="width: 76px; height: 76px; border-radius: 50%; background: rgba(10,10,10,.55); display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M9 6 L23 14 L9 22 Z" fill="#F5F3EE"></path></svg></span>
+</span>
+</sc-if>
+<sc-if value="{{w.run}}" hint-placeholder-val="{{ false }}">
+<span class="podrun" aria-hidden="true" style="position: absolute; top: 28%; left: 0; width: 22%; height: 7%; border-radius: 999px; background: #FFB547; box-shadow: 0 0 24px 6px rgba(255,181,71,.55)"></span>
+<span class="scan" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(182,243,107,.7); box-shadow: 0 0 16px rgba(182,243,107,.8)"></span>
+</sc-if>
+<sc-if value="{{w.noImg}}" hint-placeholder-val="{{ false }}">
+<div class="img" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+<span class="disp" style="font-size: clamp(60px, 9vw, 140px); color: {{w.ink}}; opacity: .9">{{w.big}}</span>
+</div>
+<span style="position: absolute; right: 18px; bottom: 16px; font-size: 12px; font-weight: 700; color: {{w.ink}}">{{w.label}}</span>
+</sc-if>
+<span class="chip" style="position: absolute; left: 18px; top: 18px; background: #0A0A0A; color: #F5F3EE; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700">{{w.tag}}</span>
+<sc-if value="{{w.href}}" hint-placeholder-val="{{ false }}">
+<a class="btn" href="{{w.href}}" style="position: absolute; right: 16px; bottom: 16px; background: {{accent}}; color: #0A0A0A; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 700; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">{{w.cta}} <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13 L13 5 M7 5 H13 V11" stroke="currentColor" stroke-width="2.2"></path></svg></a>
+</sc-if>
+</div>
+<div style="margin-top: 16px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
+<span class="disp" style="font-size: 34px; line-height: 1">{{w.title}}</span>
+<span style="font-size: 14px; color: #A9A59C">{{w.line}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- TRAVEL MAP -->
+<section id="travel" style="padding: 0 clamp(20px, 4vw, 48px) 120px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 4vw, 60px); align-items: center">
+<div>
+<span class="rv" style="display: inline-block; background: {{accent}}; color: #0A0A0A; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">TRAVEL LOG</span>
+<h2 class="disp rv" style="margin: 18px 0 0; font-size: clamp(56px, 8vw, 128px); line-height: .86">Been there,<br><span style="color: {{accent}}">filmed</span> that.</h2>
+<p class="rv" style="margin: 22px 0 0; max-width: 460px; font-size: 18px; line-height: 1.55; color: #CFCBC2">From Leh to Dzükou, Spiti to Udupi, Gujarat to the whole South — and beyond India to Lisbon, Paris, Brazil and the snow of Finland. Sleeper trains, Vande Bharat, flights. Every trip ends up as a reel.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px">
+<sc-for list="{{stamps}}" as="st" hint-placeholder-count="6">
+<span class="zp" style="display: inline-block; animation-range: {{st.range}}">
+<span class="wiggle disp" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 96px; height: 96px; border-radius: 50%; border: 3px dashed {{st.c}}; color: {{st.c}}; transform: rotate({{st.rot}}); text-align: center; line-height: .9; font-size: 19px; box-sizing: border-box; padding: 8px">{{st.name}}<span style="font-family: Archivo, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .1em; margin-top: 6px">VISITED</span></span>
+</span>
+</sc-for>
+</div>
+<div style="display: flex; gap: 22px; margin-top: 30px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 26px; height: 0; border-top: 3px dashed #FFD23F; display: inline-block"></span>Train</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 26px; height: 0; border-top: 3px dashed #7AA7FF; display: inline-block"></span>Flight</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 12px; height: 12px; border-radius: 50%; background: {{accent}}; display: inline-block"></span>Home base</span>
+</div>
+</div>
+
+<div class="slant" style="position: relative; background: #121212; border: 2px solid #262626; border-radius: 34px; padding: 20px; overflow: hidden">
+<div style="position: relative; width: 100%; aspect-ratio: 500 / 560">
+<svg viewBox="0 0 500 560" style="position: absolute; inset: 0; width: 100%; height: 100%" fill="none" aria-hidden="true">
+<defs><pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#2C2C2C"></circle></pattern></defs>
+<rect width="500" height="560" fill="url(#dots)"></rect>
+<path d="{{trainD}}" stroke="#FFD23F" stroke-width="2.5" stroke-dasharray="7 7" class="route-anim"></path>
+<path d="{{flightD}}" stroke="#7AA7FF" stroke-width="2.5" stroke-dasharray="3 8" class="route-anim"></path>
+<g><path d="M-10 0 L10 0 M1 0 L-4 -8 M1 0 L-4 8" stroke="#7AA7FF" stroke-width="3" stroke-linecap="round"></path><animateMotion dur="6s" repeatCount="indefinite" rotate="auto" path="{{fly1}}"></animateMotion></g>
+<g><path d="M-10 0 L10 0 M1 0 L-4 -8 M1 0 L-4 8" stroke="#7AA7FF" stroke-width="3" stroke-linecap="round"></path><animateMotion dur="7s" begin="2s" repeatCount="indefinite" rotate="auto" path="{{fly2}}"></animateMotion></g>
+<g><rect x="-8" y="-4" width="16" height="8" rx="3" fill="#FFD23F"></rect><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="{{train1}}"></animateMotion></g>
+<g><rect x="-8" y="-4" width="16" height="8" rx="3" fill="#FFD23F"></rect><animateMotion dur="11s" begin="3s" repeatCount="indefinite" rotate="auto" path="{{train2}}"></animateMotion></g>
+</svg>
+<sc-for list="{{places}}" as="pl" hint-placeholder-count="13">
+<button type="button" class="pin" onMouseEnter="{{pl.enter}}" onFocus="{{pl.enter}}" onClick="{{pl.enter}}" aria-label="{{pl.name}}" style="position: absolute; left: {{pl.left}}; top: {{pl.top}}; width: 44px; height: 44px; margin: -22px 0 0 -22px; padding: 0; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<span class="pin-ring" style="position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 2px solid {{pl.c}}; animation-delay: {{pl.d}}"></span>
+<span style="width: {{pl.s}}; height: {{pl.s}}; border-radius: 50%; background: {{pl.c}}; box-shadow: 0 0 0 3px #121212"></span>
+<span style="position: absolute; left: 30px; top: 50%; transform: translateY(-50%); white-space: nowrap; font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: {{pl.lc}}; opacity: {{pl.lo}}">{{pl.name}}</span>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 6px 4px; border-top: 1px solid #262626; margin-top: 10px">
+<span class="disp" style="font-size: 30px; line-height: 1; color: {{selColor}}">{{selName}}</span>
+<span style="font-size: 13px; font-weight: 600; color: #A9A59C">{{selNote}}</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- LENS GALLERY -->
+<section id="lens" aria-label="Travel photos" style="padding: 0 0 120px">
+<div style="padding: 0 clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 36px">
+<h2 class="disp rv" style="margin: 0; font-size: clamp(48px, 7vw, 110px); line-height: .9">Through my <span style="color: {{accent}}">lens</span></h2>
+<a class="btn" href="https://www.instagram.com/sidd.yar/" style="border: 2px solid #F5F3EE; padding: 14px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box">More on @sidd.yar</a>
+</div>
+<div class="lens-wrap" style="overflow: hidden">
+<div class="marquee lens-track" style="gap: 24px; padding: 20px 0">
+<sc-for list="{{lens}}" as="ph" hint-placeholder-count="12">
+<figure class="lens-card" style="margin: 0 0 0 24px; flex: none; width: clamp(220px, 22vw, 300px); transform: rotate({{ph.rot}})">
+<div style="aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 4px solid {{ph.c}}; background: #1A1A1A">
+<img src="{{ph.src}}" alt="{{ph.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: {{ph.pos}}">
+</div>
+<figcaption class="disp" style="margin-top: 14px; font-size: 26px; line-height: 1; display: flex; justify-content: space-between; gap: 10px"><span>{{ph.name}}</span><span style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #A9A59C; padding-top: 6px">{{ph.where}}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- INSTAGRAM BLOCK -->
+<section style="padding: 0 clamp(20px, 4vw, 48px) 120px">
+<div class="slant" style="background: {{accent}}; color: #0A0A0A; border-radius: 34px; overflow: hidden; padding: 60px 0">
+<div style="overflow: hidden">
+<div class="marquee disp">
+<sc-for list="{{followLoop}}" as="t" hint-placeholder-count="6">
+<span style="font-size: clamp(60px, 10vw, 170px); line-height: .9; padding: 0 30px; white-space: nowrap">{{t.t}} ✈</span>
+</sc-for>
+</div>
+</div>
+<div style="padding: 36px clamp(24px, 4vw, 56px) 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap">
+<p style="margin: 0; max-width: 460px; font-size: 19px; line-height: 1.5; font-weight: 500">Airport life, cockpit-window views and travel hacks — in Hinglish, for a desi audience.</p>
+<a class="btn" href="https://www.instagram.com/sidd.yar/" style="background: #0A0A0A; color: #F5F3EE; padding: 18px 30px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Follow @sidd.yar</a>
+</div>
+</div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" style="padding: 0 clamp(20px, 4vw, 48px) 120px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; align-items: stretch">
+<div class="slant" style="background: #F5F3EE; color: #0A0A0A; border-radius: 34px; padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; position: relative; overflow: hidden">
+<span style="font-weight: 700; font-size: 14px">OFF THE SCREEN</span>
+<div class="disp zp" style="font-size: clamp(140px, 20vw, 300px); line-height: .78; color: {{accent}}">02</div>
+<div>
+<div class="disp" style="font-size: clamp(36px, 4.4vw, 64px); line-height: .9">Events managed</div>
+<div style="margin-top: 14px; font-size: 17px; font-weight: 500; display: flex; align-items: center; gap: 10px">More landing soon — Student of the Year is next <span class="blink" style="color: {{accent}}">●</span></div>
+</div>
+<svg class="badge" width="120" height="120" viewBox="0 0 150 150" aria-hidden="true" style="position: absolute; right: 22px; top: 22px">
+<defs><path id="circ2" d="M75 75 m-55 0 a55 55 0 1 1 110 0 a55 55 0 1 1 -110 0"></path></defs>
+<circle cx="75" cy="75" r="72" fill="#0A0A0A"></circle>
+<text fill="#F5F3EE" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ2">TECH COORDINATOR • TECH COORDINATOR • </textPath></text>
+<path d="M75 52 L80 70 L98 75 L80 80 L75 98 L70 80 L52 75 L70 70 Z" fill="{{accent}}"></path>
+</svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div class="rv" style="border: 2px solid #F5F3EE; border-radius: 28px; padding: 28px">
+<span style="display: inline-block; background: {{accent}}; color: #0A0A0A; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">ROLE</span>
+<div class="disp" style="margin-top: 16px; font-size: clamp(40px, 5vw, 76px); line-height: .88">Technical Coordinator</div>
+<p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: #CFCBC2">Team Event Enclave, Department of Art &amp; Cultural Affairs (DACA), Chandigarh University — keeping the tech side of events running, from setup to showtime.</p>
+</div>
+<div class="rv" style="border: 2px solid #262626; background: #121212; border-radius: 28px; padding: 24px 28px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center">
+<div>
+<span style="display: inline-block; background: #B6F36B; color: #0A0A0A; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">SIDE QUEST</span>
+<div class="disp" style="margin-top: 14px; font-size: clamp(36px, 4.2vw, 60px); line-height: .88">Trading the markets</div>
+<p style="margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: #A9A59C">Charts open between classes and shoots.</p>
+</div>
+<div aria-hidden="true" style="position: relative; width: 150px; height: 100px; display: flex; align-items: flex-end; gap: 8px">
+<sc-for list="{{candles}}" as="k" hint-placeholder-count="8">
+<div class="candle" style="position: relative; width: 10px; height: {{k.h}}; margin-bottom: {{k.mb}}; background: {{k.c}}; border-radius: 2px; animation-delay: {{k.d}}">
+<span style="position: absolute; left: 4px; top: -8px; bottom: -8px; width: 2px; background: {{k.c}}"></span>
+</div>
+</sc-for>
+</div>
+</div>
+<sc-for list="{{events}}" as="ev" hint-placeholder-count="3">
+<div class="work rv" style="display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: center; border-radius: 22px; padding: 20px 22px; background: {{ev.bg}}; color: {{ev.ink}}">
+<span class="disp" style="font-size: 40px; line-height: 1">{{ev.num}}</span>
+<span><span class="disp" style="display: block; font-size: 30px; line-height: .95">{{ev.title}}</span><span style="font-size: 14px; font-weight: 500">{{ev.line}}</span></span>
+<span class="chip {{ev.cls}}" style="font-size: 13px; font-weight: 700; padding: 8px 12px; border-radius: 999px; border: 2px solid currentColor">{{ev.status}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<!-- BADGE WALL + CERTIFICATE -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 40px; align-items: center">
+<figure class="badgepic rv" style="margin: 0; --r: -4deg">
+<div class="bob" style="--r: -4deg; border-radius: 22px; overflow: hidden; border: 4px solid #F5F3EE; box-shadow: 0 30px 60px rgba(0,0,0,.5)">
+<img src="images/fresh-gen-universe-badge.jpg" alt="Fresh-Gen Universe 3.0 Coordinator badge, 1–2 September 2026, Chandigarh University" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover">
+</div>
+<figcaption style="margin-top: 16px; font-size: 14px; font-weight: 600">Fresh-Gen Universe 3.0 · Coordinator</figcaption>
+</figure>
+<figure class="badgepic rv" style="margin: 0">
+<div class="bob bob2" style="--r: 5deg; border-radius: 22px; overflow: hidden; border: 4px solid {{accent}}; box-shadow: 0 30px 60px rgba(0,0,0,.5)">
+<img src="images/team-event-enclave-badge.jpg" alt="Team Event Enclave badge, Department of Art and Cultural Affairs, Chandigarh University" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover">
+</div>
+<figcaption style="margin-top: 16px; font-size: 14px; font-weight: 600">Team Event Enclave · DACA</figcaption>
+</figure>
+<a class="work rv" href="https://coursera.org/verify/LMRWNY6DO2TE" style="display: flex; flex-direction: column; gap: 18px; text-decoration: none; color: #0A0A0A; background: #F5F3EE; border-radius: 28px; padding: 30px; position: relative; overflow: hidden">
+<span class="chip" style="align-self: flex-start; background: #0A0A0A; color: #F5F3EE; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">CERTIFIED</span>
+<span class="disp" style="font-size: clamp(34px, 3.4vw, 50px); line-height: .9">Entrepreneurship Strategy: From Ideation to Exit</span>
+<span style="font-size: 15px; font-weight: 600">HEC Paris · via Coursera · Sep 2026</span>
+<span style="font-size: 14px; font-weight: 700; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px">Verify certificate
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13 L13 5 M7 5 H13 V11" stroke="currentColor" stroke-width="2"></path></svg></span>
+<svg class="badge" width="110" height="110" viewBox="0 0 150 150" aria-hidden="true" style="position: absolute; right: -24px; bottom: -24px; opacity: .9">
+<defs><path id="circ3" d="M75 75 m-55 0 a55 55 0 1 1 110 0 a55 55 0 1 1 -110 0"></path></defs>
+<circle cx="75" cy="75" r="72" fill="{{accent}}"></circle>
+<text fill="#0A0A0A" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ3">HEC PARIS • COURSERA • </textPath></text>
+</svg>
+</a>
+</div>
+</section>
+
+<!-- BASES + CONTACT -->
+<section id="contact" style="padding: 0 clamp(20px, 4vw, 48px) 100px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 28px">
+<h2 class="disp rv" style="margin: 0; font-size: clamp(48px, 7vw, 110px); line-height: .9">Find me</h2>
+<div style="font-size: 16px; color: #CFCBC2">It's <strong style="color: #F5F3EE; font-variant-numeric: tabular-nums">{{clock}}</strong> here in India <span class="blink" style="color: {{accent}}">●</span></div>
+</div>
+<div style="border-top: 2px solid #F5F3EE">
+<sc-for list="{{cities}}" as="c" hint-placeholder-count="4">
+<div class="city" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 0; border-bottom: 2px solid #F5F3EE">
+<span class="disp" style="font-size: clamp(36px, 5vw, 72px); line-height: .9">{{c.name}}</span>
+<span style="font-size: 15px; font-weight: 500; padding-right: 16px">{{c.note}}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px">
+<a class="btn" href="mailto:sidd25sm@gmail.com" style="background: {{accent}}; color: #0A0A0A; padding: 20px 34px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Email me</a>
+<a class="btn" href="https://www.linkedin.com/in/siddesh-sule-37778727b" style="border: 2px solid #F5F3EE; padding: 18px 32px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">LinkedIn</a>
+<a class="btn" href="https://www.instagram.com/sidd.yar/" style="border: 2px solid #F5F3EE; padding: 18px 32px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Instagram</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid #222; padding: 40px clamp(20px, 4vw, 48px) 20px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: #A9A59C">
+<span>© 2026 Siddesh Sule</span>
+<span>No boring allowed.</span>
+</div>
+<div class="disp giant" aria-hidden="true" style="margin-top: 30px; font-size: clamp(100px, 24vw, 380px); line-height: .8; white-space: nowrap; text-align: center">SIDD<span style="color: {{accent}}">*</span></div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF4D2E","options":["#FF4D2E","#FFD23F","#7AA7FF","#FF8FC7"]},"$preview":{"width":1440,"height":9600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { typed: '', strike: false, hov: -1, px: 0, py: 0, now: Date.now(), place: -1 };
+    this._raf = 0;
+    this._p = null;
+    this._timers = [];
+  }
+  componentDidMount() {
+    const phrases = ['boring websites', 'boring feeds', 'boring reels', 'boring brands'];
+    let pi = 0, ci = 0, mode = 'type', wait = 0;
+    const step = () => {
+      const p = phrases[pi];
+      if (wait > 0) { wait--; return; }
+      if (mode === 'type') {
+        ci++;
+        this.setState({ typed: p.slice(0, ci), strike: false });
+        if (ci >= p.length) { mode = 'strike'; wait = 4; }
+      } else if (mode === 'strike') {
+        this.setState({ strike: true });
+        mode = 'del'; wait = 12;
+      } else {
+        ci--;
+        this.setState({ typed: p.slice(0, ci), strike: false });
+        if (ci <= 0) { mode = 'type'; pi = (pi + 1) % phrases.length; wait = 3; }
+      }
+    };
+    this._timers.push(setInterval(step, 70));
+    this._timers.push(setInterval(() => this.setState({ now: Date.now() }), 1000));
+  }
+  componentWillUnmount() {
+    this._timers.forEach((t) => clearInterval(t));
+    if (this._raf) cancelAnimationFrame(this._raf);
+  }
+  renderVals() {
+    const self = this;
+    const s = this.state;
+    const accent = this.props.accent ?? '#FF4D2E';
+
+    const onMove = (e) => {
+      const r = e.currentTarget.getBoundingClientRect();
+      self._p = { px: e.clientX - r.left, py: e.clientY - r.top };
+      if (!self._raf) {
+        self._raf = requestAnimationFrame(() => { self._raf = 0; if (self._p) self.setState(self._p); });
+      }
+    };
+    const leaveList = () => self.setState({ hov: -1 });
+
+    const specRaw = [
+      { title: 'Websites', tag: 'WEB DEV', word: 'Clicks that convert', bg: '#7AA7FF' },
+      { title: 'Social media', tag: 'MANAGEMENT', word: 'Feeds that grow', bg: '#FFD23F' },
+      { title: 'Reels', tag: 'CONTENT', word: 'Watched to the end', bg: '#FF8FC7' },
+      { title: 'Brand identity', tag: 'DESIGN', word: 'Logos people remember', bg: '#B6F36B' },
+      { title: 'Aviation stories', tag: 'TRAVEL', word: 'From the runway', bg: accent },
+      { title: 'Events', tag: 'MANAGEMENT', word: 'Run on the ground', bg: '#C9A2FF' }
+    ];
+    const events = [
+      { num: '01', title: 'Fresh-Gen Universe 3.0', line: 'Coordinator · 1–2 Sep 2026', status: 'DONE', bg: '#1A1A1A', ink: '#F5F3EE', cls: '' },
+      { num: '02', title: 'Fresh-Gen Fiesta', line: 'Managed', status: 'DONE', bg: '#1A1A1A', ink: '#F5F3EE', cls: '' },
+      { num: '03', title: 'Student of the Year', line: 'Up next — coming in the next few weeks', status: 'LOADING', bg: accent, ink: '#0A0A0A', cls: 'blink' }
+    ];
+    const specs = specRaw.map((x, i) => ({ ...x, num: '0' + (i + 1), enter: () => self.setState({ hov: i }) }));
+    const h = s.hov >= 0 ? specRaw[s.hov] : specRaw[0];
+    const tilt = s.hov >= 0 ? (s.hov % 2 ? 6 : -6) : 0;
+
+    const pitchWords = ['Your', 'brand', 'shouldn’t', 'fly', 'economy.'];
+    const pitch = pitchWords.map((t, i) => ({
+      t: t,
+      color: (t === 'fly' || t === 'economy.') ? accent : '#F5F3EE',
+      range: 'entry ' + (i * 9) + '% cover ' + (40 + i * 6) + '%'
+    }));
+
+    const work = [
+      { title: 'Doggo Delights', line: 'My own brand', tag: 'MY BRAND', bg: '#FFFFFF', ink: '#0A0A0A', img: 'images/doggo-delights-logo.jpg', noImg: false, run: false, fit: 'contain', href: '', cta: '', alt: 'Doggo Delights logo: a smiling dog behind a blue food bowl with a paw print', pos: 'center', big: '', label: '' },
+      { title: 'Travel feed', line: 'Featured reel · Instagram', tag: 'REEL', bg: '#1E1E1E', ink: '#F5F3EE', img: 'images/reel.jpg', noImg: false, run: false, play: true, fit: 'cover', href: 'https://www.instagram.com/reel/Dakxa-OoJrt/', cta: 'Watch reel', alt: 'Sitting on top of a yellow Jeep looking out at mountains under a cloudy sky in Kerala', pos: '75% 62%', big: '', label: '' },
+      { title: 'Hyperloop Pod & Tube', line: '1:50 concept model · in progress', tag: 'BUILDING NOW', bg: '#0D3A63', ink: '#F5F3EE', img: 'images/hyperloop-blueprint.jpg', noImg: false, run: true, fit: 'cover', href: '', cta: '', alt: 'Technical blueprint of a hyperloop pod and low-pressure tube concept model: side elevation, section A–A with air-cushion and magnetic levitation, and plan view', pos: 'left top', big: '', label: '' },
+      { title: 'Your brand next?', line: 'Websites · social · reels', tag: 'OPEN SLOT', bg: accent, ink: '#0A0A0A', img: '', noImg: true, run: false, fit: 'cover', href: '', cta: '', alt: '', pos: 'center', big: 'YOU?', label: 'LET’S TALK →' }
+    ];
+    const rep = (arr, n) => { let o = []; for (let i = 0; i < n; i++) o = o.concat(arr); return o.map((t) => ({ t: t })); };
+    const cities = [
+      { name: 'Mumbai', note: 'Home base' },
+      { name: 'Bengaluru', note: 'Home base' },
+      { name: 'Chandigarh', note: 'Studying at CU' }
+    ];
+    const clock = new Date(s.now).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' });
+
+    // travel map: simple lat/long projection onto a 500x560 box
+    const P = (lat, lon) => [((lon - 68) / 29.5) * 460 + 20, ((37 - lat) / 29) * 520 + 20];
+    const placeRaw = [
+      { name: 'Leh', lat: 34.15, lon: 77.58, kind: 'trip', note: 'Ladakh — high passes & monasteries' },
+      { name: 'Kashmir', lat: 34.08, lon: 74.8, kind: 'trip', note: 'Valleys & lakes' },
+      { name: 'Nako', lat: 31.88, lon: 78.63, kind: 'trip', note: 'Kinnaur, Himachal — lake village' },
+      { name: 'Chandigarh', lat: 30.73, lon: 76.78, kind: 'base', note: 'Studying at CU' },
+      { name: 'Delhi', lat: 28.61, lon: 77.21, kind: 'trip', note: 'Capital trips' },
+      { name: 'Rajasthan', lat: 26.91, lon: 75.79, kind: 'trip', note: 'Forts & desert' },
+      { name: 'Lucknow', lat: 26.85, lon: 80.95, kind: 'trip', note: 'Train from Mumbai' },
+      { name: 'Meghalaya', lat: 25.57, lon: 91.88, kind: 'trip', note: 'Clouds & waterfalls' },
+      { name: 'Dzükou', lat: 25.55, lon: 94.08, kind: 'trip', note: 'Dzükou Valley trek' },
+      { name: 'Gujarat', lat: 23.02, lon: 72.57, kind: 'trip', note: 'Explored Gujarat' },
+      { name: 'Sambhajinagar', lat: 19.88, lon: 75.34, kind: 'trip', note: 'Maharashtra' },
+      { name: 'Mumbai', lat: 19.08, lon: 72.88, kind: 'base', note: 'Home base' },
+      { name: 'Udupi', lat: 13.34, lon: 74.74, kind: 'trip', note: 'Coastal Karnataka' },
+      { name: 'Bengaluru', lat: 12.97, lon: 77.59, kind: 'base', note: 'Home base' },
+      { name: 'Chennai', lat: 13.08, lon: 80.27, kind: 'trip', note: 'Tamil Nadu — South trip' },
+      { name: 'Kerala', lat: 9.93, lon: 76.27, kind: 'trip', note: 'South trip' }
+    ];
+    const pt = {};
+    placeRaw.forEach((p) => { pt[p.name] = P(p.lat, p.lon); });
+    const line = (a, b) => 'M' + pt[a][0].toFixed(1) + ' ' + pt[a][1].toFixed(1) + ' L' + pt[b][0].toFixed(1) + ' ' + pt[b][1].toFixed(1);
+    const arc = (a, b) => {
+      const [x1, y1] = pt[a], [x2, y2] = pt[b];
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      const dx = x2 - x1, dy = y2 - y1;
+      const cx = mx - dy * 0.3, cy = my + dx * 0.3;
+      return 'M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' Q' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y2.toFixed(1);
+    };
+    const trains = [['Mumbai', 'Lucknow'], ['Delhi', 'Chandigarh'], ['Mumbai', 'Sambhajinagar']];
+    const flights = [['Mumbai', 'Bengaluru'], ['Bengaluru', 'Chandigarh'], ['Mumbai', 'Chandigarh']];
+    const homeIdx = placeRaw.findIndex((p) => p.name === 'Mumbai');
+    const sel = placeRaw[s.place >= 0 ? s.place : homeIdx];
+    const places = placeRaw.map((p, i) => {
+      const [x, y] = pt[p.name];
+      const on = i === (s.place >= 0 ? s.place : homeIdx);
+      const c = p.kind === 'base' ? accent : '#F5F3EE';
+      return {
+        name: p.name, c: c,
+        left: (x / 500 * 100).toFixed(2) + '%', top: (y / 560 * 100).toFixed(2) + '%',
+        s: on ? '14px' : '10px', d: (-(i * 0.37) % 2.4).toFixed(2) + 's',
+        lc: on ? c : '#A9A59C', lo: on || p.kind === 'base' || i % 2 === 0 ? 1 : 0.55,
+        enter: () => self.setState({ place: i })
+      };
+    });
+    const stampRaw = [['Leh', '#7AA7FF', '-8deg'], ['Meghalaya', '#B6F36B', '6deg'], ['Dzükou', '#FF8FC7', '-4deg'], ['Nako', '#C9A2FF', '9deg'], ['Karnataka', '#FFD23F', '-10deg'], ['Udupi', accent, '5deg'], ['The South', '#7AA7FF', '-6deg'], ['Gujarat', '#FFD23F', '8deg'], ['MP', '#B6F36B', '-3deg'], ['Rajasthan', '#FF8FC7', '7deg'], ['Kashmir', '#C9A2FF', '-9deg'], ['Lisboa', '#7AA7FF', '6deg'], ['Paris', '#FF8FC7', '-5deg'], ['Brazil', '#B6F36B', '4deg'], ['Finland', '#7AA7FF', '-7deg']];
+    const stamps = stampRaw.map((x, i) => ({ name: x[0], c: x[1], rot: x[2], range: 'entry ' + (i * 3) + '% cover ' + (30 + i * 2) + '%' }));
+
+    return {
+      accent,
+      typed: s.typed || ' ',
+      strikeCls: s.strike ? 'on' : '',
+      onMove, leaveList, specs,
+      prevT: 'translate(' + s.px + 'px, ' + s.py + 'px) rotate(' + tilt + 'deg) scale(' + (s.hov >= 0 ? 1 : 0.6) + ')',
+      prevO: s.hov >= 0 ? 1 : 0,
+      prevBg: h.bg, prevTag: h.tag, prevWord: h.word,
+      pitch, work, cities, clock, events,
+      places, stamps,
+      lens: (() => {
+        const ph = [
+          { name: 'Nako', where: 'HIMACHAL', src: 'images/nako.jpg', alt: 'Nako village and lake under stormy clouds in the Himalayas', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'Spiti', where: 'HIMACHAL', src: 'images/monastery.jpg', alt: 'Colourful Buddhist monastery against mountains and clouds in Spiti Valley', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'Lisboa', where: 'PORTUGAL', src: 'images/lisboa.jpg', alt: 'Comic-style mural and graffiti in an archway in Lisbon', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Catching waves', where: 'BRAZIL', src: 'images/surf.jpg', alt: 'Surfer with a board standing on rocks facing the waves in Brazil', pos: 'center 70%', c: '#B6F36B', rot: '3deg' },
+          { name: 'Paris', where: 'FRANCE', src: 'images/paris.jpg', alt: 'Pink fairytale castle under blue sky at Disneyland Paris', pos: 'center 40%', c: '#C9A2FF', rot: '-3deg' },
+          { name: 'Husky ride', where: 'FINLAND', src: 'images/finland.jpg', alt: 'Husky sled ride through a snowy forest in Finland', pos: 'center', c: '#7AA7FF', rot: '3deg' },
+          { name: 'Above it all', where: 'PARAGLIDING', src: 'images/paraglide.jpg', alt: 'Paraglider with a yellow wing above clouds and a lake', pos: 'center 35%', c: accent, rot: '2deg' }
+        ];
+        return ph.concat(ph);
+      })(),
+      candles: [[18, 8], [22, 4], [16, 16], [28, 14], [20, 28], [30, 26], [18, 44], [32, 40]].map((v, i) => {
+        const up = i % 3 !== 1;
+        return { h: v[0] + 'px', mb: v[1] + 'px', c: up ? '#B6F36B' : accent, d: (i * 0.12).toFixed(2) + 's' };
+      }),
+      trainD: trains.map((t) => line(t[0], t[1])).join(' '),
+      flightD: flights.map((f) => arc(f[0], f[1])).join(' '),
+      fly1: arc('Mumbai', 'Bengaluru'), fly2: arc('Bengaluru', 'Chandigarh'),
+      train1: line('Delhi', 'Chandigarh'), train2: line('Mumbai', 'Lucknow'),
+      selName: sel.name, selNote: sel.note, selColor: sel.kind === 'base' ? accent : '#F5F3EE',
+      loudLoop: rep(['No boring', 'Websites', 'Social', 'Reels', 'Events', 'Trading', 'Desi energy'], 2),
+      quietLoop: rep(['Leh', 'Spiti', 'Nako', 'Meghalaya', 'Dzükou', 'Udupi', 'Lisboa', 'Paris', 'Brazil', 'Finland', 'Instagram'], 2),
+      followLoop: rep(['Follow the flight'], 4)
+    };
+  }
+}
+</script>
+</body>
+</html>
