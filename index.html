@@ -8,18 +8,18 @@
 <script src="./support.js"></script>
 <style id="stack-spread-css">
 /* Stack Spread — scroll-driven photo scatter (vanilla port of the React component) */
-.ss-stage{position:absolute;left:0;top:0;z-index:5;width:100%;height:350vh;background:#081A2E;color:#FBFBFB;font-family:'Archivo',system-ui,sans-serif}
+.ss-stage{position:absolute;left:0;top:0;z-index:5;width:100%;height:350vh;background:#0A0A0A;color:#F5F3EE;font-family:'Archivo',system-ui,sans-serif}
 .ss-sticky{position:sticky;top:var(--ss-nav,0px);height:calc(100vh - var(--ss-nav,0px));width:100%;overflow:hidden}
 .ss-copy{pointer-events:none;position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;text-align:center;opacity:0;will-change:opacity,transform}
-.ss-copy h2{margin:0;font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(56px,9vw,160px);line-height:.88;letter-spacing:-.01em;color:#FBFBFB}
+.ss-copy h2{margin:0;font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(56px,9vw,160px);line-height:.88;letter-spacing:-.01em;color:#F5F3EE}
 .ss-copy h2 .ss-dim{opacity:.55}
-.ss-copy h2 .ss-dot{color:var(--accent,#849CB4)}
-.ss-copy p{margin:clamp(14px,1.4vw,24px) 0 0;max-width:46ch;font-size:clamp(15px,1.2vw,19px);line-height:1.6;color:#D4DAE2}
+.ss-copy h2 .ss-dot{color:var(--accent,#FF4D2E)}
+.ss-copy p{margin:clamp(14px,1.4vw,24px) 0 0;max-width:46ch;font-size:clamp(15px,1.2vw,19px);line-height:1.6;color:#CFCBC2}
 .ss-cards{position:absolute;inset:0;z-index:10}
 .ss-card{position:absolute;left:50%;top:50%;will-change:transform}
 .ss-card .ss-face{position:relative;width:100%;height:100%;overflow:hidden;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
 .ss-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
-.ss-hint{pointer-events:none;position:absolute;left:0;right:0;bottom:3vh;z-index:20;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#FBFBFB}
+.ss-hint{pointer-events:none;position:absolute;left:0;right:0;bottom:3vh;z-index:20;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#F5F3EE}
 .ss-hint svg{animation:ss-bounce 1s infinite}
 @keyframes ss-bounce{0%,100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}
 @media (max-width:767px){.ss-card .ss-face{border-radius:4vw}}
@@ -32,8 +32,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&amp;family=Archivo:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#081A2E}
-a{color:#FBFBFB}a:hover{color:#FFFFFF}
+body{margin:0;background:#0A0A0A}
+a{color:#F5F3EE}a:hover{color:#FFFFFF}
 .disp{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em}
 
 .pop{display:inline-block;opacity:0;transform:translateY(60%) scale(.6) rotate(-6deg);animation:pop .8s cubic-bezier(.34,1.56,.64,1) forwards}
@@ -71,9 +71,9 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 .work:hover .chip{transform:translateY(-6px) rotate(-4deg)}
 
 .btn{transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
-.btn:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 #FBFBFB}
+.btn:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 #F5F3EE}
 .city{transition:background .35s,color .35s,padding .45s cubic-bezier(.16,1,.3,1)}
-.city:hover{background:#FBFBFB;color:#081A2E;padding-left:28px}
+.city:hover{background:#F5F3EE;color:#0A0A0A;padding-left:28px}
 .lens-track{animation-duration:180s}
 .lens-wrap:hover .lens-track{animation-play-state:paused}
 .lens-card{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
@@ -114,10 +114,10 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 </style>
 </helmet>
 
-<div style="--accent: {{accent}}; position: relative; background: #081A2E; color: #FBFBFB; font-family: 'Archivo', system-ui, sans-serif; overflow-x: clip">
+<div style="--accent: {{accent}}; position: relative; background: #0A0A0A; color: #F5F3EE; font-family: 'Archivo', system-ui, sans-serif; overflow-x: clip">
 
 <!-- NAV -->
-<nav style="position: sticky; top: 0; z-index: 30; background: #081A2E; border-bottom: 1px solid #1E3654; padding: 16px clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<nav style="position: sticky; top: 0; z-index: 30; background: #0A0A0A; border-bottom: 1px solid #222; padding: 16px clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
 <a class="disp wiggle" href="#top" style="font-size: 30px; text-decoration: none; display: inline-block">SIDD<span style="color: {{accent}}">*</span></a>
 <div class="nav-links" style="display: flex; gap: 26px; align-items: center; font-size: 15px; font-weight: 500; flex-wrap: wrap">
 <a href="#specialisms" style="text-decoration: none">Specialisms</a>
@@ -125,7 +125,7 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <a href="#events" style="text-decoration: none">Events</a>
 <a href="#travel" style="text-decoration: none">Travel</a>
 <a href="#about" style="text-decoration: none">About</a>
-<a class="btn" href="#contact" style="background: {{accent}}; color: #081A2E; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 700; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Let's talk</a>
+<a class="btn" href="#contact" style="background: {{accent}}; color: #0A0A0A; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 700; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Let's talk</a>
 </div>
 </nav>
 
@@ -134,16 +134,16 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 
 <!-- LOUD MARQUEES -->
 <div style="transform: rotate(-3deg); margin: 0 -40px; position: relative; z-index: 3">
-<div style="background: {{accent}}; color: #081A2E; padding: 14px 0; overflow: hidden">
+<div style="background: {{accent}}; color: #0A0A0A; padding: 14px 0; overflow: hidden">
 <div class="marquee disp">
 <sc-for list="{{loudLoop}}" as="t" hint-placeholder-count="10">
-<span style="font-size: clamp(34px, 4.4vw, 60px); padding: 0 24px; white-space: nowrap">{{t.t}} <span style="color: #FBFBFB">✺</span></span>
+<span style="font-size: clamp(34px, 4.4vw, 60px); padding: 0 24px; white-space: nowrap">{{t.t}} <span style="color: #F5F3EE">✺</span></span>
 </sc-for>
 </div>
 </div>
 </div>
 <div style="transform: rotate(2deg); margin: -10px -40px 0; position: relative; z-index: 2">
-<div style="background: #FBFBFB; color: #081A2E; padding: 12px 0; overflow: hidden">
+<div style="background: #F5F3EE; color: #0A0A0A; padding: 12px 0; overflow: hidden">
 <div class="marquee marquee-rev marquee-slow disp">
 <sc-for list="{{quietLoop}}" as="t" hint-placeholder-count="10">
 <span style="font-size: clamp(22px, 2.6vw, 34px); padding: 0 22px; white-space: nowrap">{{t.t}} ✦</span>
@@ -154,17 +154,17 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 
 <!-- SPECIALISMS -->
 <section id="specialisms" onMouseMove="{{onMove}}" onMouseLeave="{{leaveList}}" style="position: relative; padding: clamp(100px, 12vw, 170px) clamp(20px, 4vw, 48px) 80px">
-<div class="preview" style="transform: {{prevT}}; opacity: {{prevO}}; background: {{prevBg}}; display: flex; flex-direction: column; justify-content: space-between; padding: 22px; box-sizing: border-box; color: #081A2E">
+<div class="preview" style="transform: {{prevT}}; opacity: {{prevO}}; background: {{prevBg}}; display: flex; flex-direction: column; justify-content: space-between; padding: 22px; box-sizing: border-box; color: #0A0A0A">
 <span style="font-weight: 700; font-size: 13px">{{prevTag}}</span>
 <span class="disp" style="font-size: 44px; line-height: .9">{{prevWord}}</span>
 </div>
 <div class="rv" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 30px">
 <h2 class="disp" style="margin: 0; font-size: clamp(48px, 7vw, 110px); line-height: .9">Specialisms</h2>
-<p style="margin: 0; max-width: 360px; color: #D4DAE2; font-size: 17px; line-height: 1.5">Hover a row. Everything I do for brands, in one loud list.</p>
+<p style="margin: 0; max-width: 360px; color: #CFCBC2; font-size: 17px; line-height: 1.5">Hover a row. Everything I do for brands, in one loud list.</p>
 </div>
-<div style="border-top: 2px solid #FBFBFB">
+<div style="border-top: 2px solid #F5F3EE">
 <sc-for list="{{specs}}" as="s" hint-placeholder-count="5">
-<a class="srow rv" href="#contact" onMouseEnter="{{s.enter}}" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; border-bottom: 2px solid #FBFBFB; text-decoration: none; color: #FBFBFB">
+<a class="srow rv" href="#contact" onMouseEnter="{{s.enter}}" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; border-bottom: 2px solid #F5F3EE; text-decoration: none; color: #F5F3EE">
 <span style="display: flex; align-items: baseline; gap: 22px">
 <span style="font-size: 14px; font-weight: 700">{{s.num}}</span>
 <span class="disp" style="font-size: clamp(44px, 7.4vw, 120px); line-height: .9">{{s.title}}</span>
@@ -180,10 +180,10 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <h2 class="disp" style="margin: 0 auto; max-width: 1300px; font-size: clamp(54px, 9vw, 150px); line-height: .88">
 <sc-for list="{{pitch}}" as="p" hint-placeholder-count="8"><span class="zp" style="display: inline-block; margin: 0 .12em; color: {{p.color}}; animation-range: {{p.range}}">{{p.t}}</span></sc-for>
 </h2>
-<p class="rv" style="margin: 36px auto 0; max-width: 640px; font-size: 19px; line-height: 1.65; color: #D4DAE2">I'm Siddesh Sule, but everyone calls me Sidd. I'm studying BSc Airlines &amp; Airport Management at Chandigarh University, working towards an MBA in Aviation Management. For my coursework I've built working models of a runway with an ATC tower, runway lighting, cargo handling and a 1:50 Hyperloop pod and tube. I've also completed HEC Paris's Entrepreneurship Strategy course on Coursera.</p>
-<p class="rv" style="margin: 18px auto 0; max-width: 640px; font-size: 19px; line-height: 1.65; color: #D4DAE2">Outside class, I run a small digital consultancy. I build websites, manage social media and create content for clients in India and abroad, and I've launched my own brand, Doggo Delights. At CU I'm a Technical Coordinator with the DACA Team, where I've managed Fresh Gen Universe and Fresh Gen Fiesta, with Student of the Year up next.</p>
-<p class="rv" style="margin: 18px auto 0; max-width: 640px; font-size: 19px; line-height: 1.65; color: #D4DAE2">When I'm not working, I'm usually travelling. I've explored Ladakh, Kashmir, Spiti, Meghalaya, Rajasthan, Kerala and Karnataka, and gone further to Finland, Paris, Lisbon and Brazil: husky sledding through snow, paragliding above the clouds, surfing at sunrise. I take a lot of long train journeys across India and photograph almost everything along the way. I share it all on Instagram as @sidd.yar, along with my day-to-day hustle.</p>
-<div class="rv" style="margin-top: 36px"><a class="btn" href="#contact" style="display: inline-flex; align-items: center; background: #FBFBFB; color: #081A2E; padding: 18px 30px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Work with me</a></div>
+<p class="rv" style="margin: 36px auto 0; max-width: 640px; font-size: 19px; line-height: 1.65; color: #CFCBC2">I'm Siddesh Sule, but everyone calls me Sidd. I'm studying BSc Airlines &amp; Airport Management at Chandigarh University, working towards an MBA in Aviation Management. For my coursework I've built working models of a runway with an ATC tower, runway lighting, cargo handling and a 1:50 Hyperloop pod and tube. I've also completed HEC Paris's Entrepreneurship Strategy course on Coursera.</p>
+<p class="rv" style="margin: 18px auto 0; max-width: 640px; font-size: 19px; line-height: 1.65; color: #CFCBC2">Outside class, I run a small digital consultancy. I build websites, manage social media and create content for clients in India and abroad, and I've launched my own brand, Doggo Delights. At CU I'm a Technical Coordinator with the DACA Team, where I've managed Fresh Gen Universe and Fresh Gen Fiesta, with Student of the Year up next.</p>
+<p class="rv" style="margin: 18px auto 0; max-width: 640px; font-size: 19px; line-height: 1.65; color: #CFCBC2">When I'm not working, I'm usually travelling. I've explored Ladakh, Kashmir, Spiti, Meghalaya, Rajasthan, Kerala and Karnataka, and gone further to Finland, Paris, Lisbon and Brazil: husky sledding through snow, paragliding above the clouds, surfing at sunrise. I take a lot of long train journeys across India and photograph almost everything along the way. I share it all on Instagram as @sidd.yar, along with my day-to-day hustle.</p>
+<div class="rv" style="margin-top: 36px"><a class="btn" href="#contact" style="display: inline-flex; align-items: center; background: #F5F3EE; color: #0A0A0A; padding: 18px 30px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Work with me</a></div>
 </section>
 
 <!-- WORK -->
@@ -191,20 +191,20 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <h2 class="disp rv" style="margin: 0 0 40px; font-size: clamp(48px, 7vw, 110px); line-height: .9">The work<span style="color: {{accent}}">.</span></h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 28px">
 <sc-for list="{{work}}" as="w" hint-placeholder-count="4">
-<div class="work slant" style="display: block; color: #FBFBFB">
+<div class="work slant" style="display: block; color: #F5F3EE">
 <div style="aspect-ratio: 5 / 4; border-radius: 26px; overflow: hidden; position: relative; background: {{w.bg}}">
 <sc-if value="{{w.img}}" hint-placeholder-val="{{ true }}">
 <img class="img" src="{{w.img}}" alt="{{w.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{w.fit}}; object-position: {{w.pos}}">
 </sc-if>
 <sc-if value="{{w.play}}" hint-placeholder-val="{{ false }}">
 <span aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; display: flex; align-items: center; justify-content: center">
-<span class="pin-ring" style="position: absolute; width: 76px; height: 76px; border-radius: 50%; border: 3px solid #FBFBFB"></span>
-<span style="width: 76px; height: 76px; border-radius: 50%; background: rgba(8,26,46,.55); display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M9 6 L23 14 L9 22 Z" fill="#FBFBFB"></path></svg></span>
+<span class="pin-ring" style="position: absolute; width: 76px; height: 76px; border-radius: 50%; border: 3px solid #F5F3EE"></span>
+<span style="width: 76px; height: 76px; border-radius: 50%; background: rgba(10,10,10,.55); display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M9 6 L23 14 L9 22 Z" fill="#F5F3EE"></path></svg></span>
 </span>
 </sc-if>
 <sc-if value="{{w.run}}" hint-placeholder-val="{{ false }}">
-<span class="podrun" aria-hidden="true" style="position: absolute; top: 28%; left: 0; width: 22%; height: 7%; border-radius: 999px; background: #D4DAE2; box-shadow: 0 0 24px 6px rgba(212,218,226,.55)"></span>
-<span class="scan" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(132,156,180,.7); box-shadow: 0 0 16px rgba(132,156,180,.8)"></span>
+<span class="podrun" aria-hidden="true" style="position: absolute; top: 28%; left: 0; width: 22%; height: 7%; border-radius: 999px; background: #FFB547; box-shadow: 0 0 24px 6px rgba(255,181,71,.55)"></span>
+<span class="scan" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(182,243,107,.7); box-shadow: 0 0 16px rgba(182,243,107,.8)"></span>
 </sc-if>
 <sc-if value="{{w.noImg}}" hint-placeholder-val="{{ false }}">
 <div class="img" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
@@ -212,14 +212,14 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 </div>
 <span style="position: absolute; right: 18px; bottom: 16px; font-size: 12px; font-weight: 700; color: {{w.ink}}">{{w.label}}</span>
 </sc-if>
-<span class="chip" style="position: absolute; left: 18px; top: 18px; background: #081A2E; color: #FBFBFB; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700">{{w.tag}}</span>
+<span class="chip" style="position: absolute; left: 18px; top: 18px; background: #0A0A0A; color: #F5F3EE; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700">{{w.tag}}</span>
 <sc-if value="{{w.href}}" hint-placeholder-val="{{ false }}">
-<a class="btn" href="{{w.href}}" style="position: absolute; right: 16px; bottom: 16px; background: {{accent}}; color: #081A2E; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 700; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">{{w.cta}} <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13 L13 5 M7 5 H13 V11" stroke="currentColor" stroke-width="2.2"></path></svg></a>
+<a class="btn" href="{{w.href}}" style="position: absolute; right: 16px; bottom: 16px; background: {{accent}}; color: #0A0A0A; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 700; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">{{w.cta}} <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13 L13 5 M7 5 H13 V11" stroke="currentColor" stroke-width="2.2"></path></svg></a>
 </sc-if>
 </div>
 <div style="margin-top: 16px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
 <span class="disp" style="font-size: 34px; line-height: 1">{{w.title}}</span>
-<span style="font-size: 14px; color: #849CB4">{{w.line}}</span>
+<span style="font-size: 14px; color: #A9A59C">{{w.line}}</span>
 </div>
 </div>
 </sc-for>
@@ -230,9 +230,9 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <section id="travel" style="padding: 0 clamp(20px, 4vw, 48px) 120px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 4vw, 60px); align-items: center">
 <div>
-<span class="rv" style="display: inline-block; background: {{accent}}; color: #081A2E; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">TRAVEL LOG</span>
+<span class="rv" style="display: inline-block; background: {{accent}}; color: #0A0A0A; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">TRAVEL LOG</span>
 <h2 class="disp rv" style="margin: 18px 0 0; font-size: clamp(56px, 8vw, 128px); line-height: .86">Been there,<br><span style="color: {{accent}}">filmed</span> that.</h2>
-<p class="rv" style="margin: 22px 0 0; max-width: 460px; font-size: 18px; line-height: 1.55; color: #D4DAE2">From Leh to Dzükou, Spiti to Udupi, Gujarat to the whole South — and beyond India to Lisbon, Paris, Brazil and the snow of Finland. Sleeper trains, Vande Bharat, flights. Every trip ends up as a reel.</p>
+<p class="rv" style="margin: 22px 0 0; max-width: 460px; font-size: 18px; line-height: 1.55; color: #CFCBC2">From Leh to Dzükou, Spiti to Udupi, Gujarat to the whole South — and beyond India to Lisbon, Paris, Brazil and the snow of Finland. Sleeper trains, Vande Bharat, flights. Every trip ends up as a reel.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px">
 <sc-for list="{{stamps}}" as="st" hint-placeholder-count="6">
 <span class="zp" style="display: inline-block; animation-range: {{st.range}}">
@@ -241,35 +241,35 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 </sc-for>
 </div>
 <div style="display: flex; gap: 22px; margin-top: 30px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
-<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 26px; height: 0; border-top: 3px dashed #FBFBFB; display: inline-block"></span>Train</span>
-<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 26px; height: 0; border-top: 3px dashed #D4DAE2; display: inline-block"></span>Flight</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 26px; height: 0; border-top: 3px dashed #FFD23F; display: inline-block"></span>Train</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 26px; height: 0; border-top: 3px dashed #7AA7FF; display: inline-block"></span>Flight</span>
 <span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 12px; height: 12px; border-radius: 50%; background: {{accent}}; display: inline-block"></span>Home base</span>
 </div>
 </div>
 
-<div class="slant" style="position: relative; background: #0C1F38; border: 2px solid #37506C; border-radius: 34px; padding: 20px; overflow: hidden">
+<div class="slant" style="position: relative; background: #121212; border: 2px solid #262626; border-radius: 34px; padding: 20px; overflow: hidden">
 <div style="position: relative; width: 100%; aspect-ratio: 500 / 560">
 <svg viewBox="0 0 500 560" style="position: absolute; inset: 0; width: 100%; height: 100%" fill="none" aria-hidden="true">
-<defs><pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#37506C"></circle></pattern></defs>
+<defs><pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#2C2C2C"></circle></pattern></defs>
 <rect width="500" height="560" fill="url(#dots)"></rect>
-<path d="{{trainD}}" stroke="#FBFBFB" stroke-width="2.5" stroke-dasharray="7 7" class="route-anim"></path>
-<path d="{{flightD}}" stroke="#D4DAE2" stroke-width="2.5" stroke-dasharray="3 8" class="route-anim"></path>
-<g><path d="M-10 0 L10 0 M1 0 L-4 -8 M1 0 L-4 8" stroke="#D4DAE2" stroke-width="3" stroke-linecap="round"></path><animateMotion dur="6s" repeatCount="indefinite" rotate="auto" path="{{fly1}}"></animateMotion></g>
-<g><path d="M-10 0 L10 0 M1 0 L-4 -8 M1 0 L-4 8" stroke="#D4DAE2" stroke-width="3" stroke-linecap="round"></path><animateMotion dur="7s" begin="2s" repeatCount="indefinite" rotate="auto" path="{{fly2}}"></animateMotion></g>
-<g><rect x="-8" y="-4" width="16" height="8" rx="3" fill="#FBFBFB"></rect><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="{{train1}}"></animateMotion></g>
-<g><rect x="-8" y="-4" width="16" height="8" rx="3" fill="#FBFBFB"></rect><animateMotion dur="11s" begin="3s" repeatCount="indefinite" rotate="auto" path="{{train2}}"></animateMotion></g>
+<path d="{{trainD}}" stroke="#FFD23F" stroke-width="2.5" stroke-dasharray="7 7" class="route-anim"></path>
+<path d="{{flightD}}" stroke="#7AA7FF" stroke-width="2.5" stroke-dasharray="3 8" class="route-anim"></path>
+<g><path d="M-10 0 L10 0 M1 0 L-4 -8 M1 0 L-4 8" stroke="#7AA7FF" stroke-width="3" stroke-linecap="round"></path><animateMotion dur="6s" repeatCount="indefinite" rotate="auto" path="{{fly1}}"></animateMotion></g>
+<g><path d="M-10 0 L10 0 M1 0 L-4 -8 M1 0 L-4 8" stroke="#7AA7FF" stroke-width="3" stroke-linecap="round"></path><animateMotion dur="7s" begin="2s" repeatCount="indefinite" rotate="auto" path="{{fly2}}"></animateMotion></g>
+<g><rect x="-8" y="-4" width="16" height="8" rx="3" fill="#FFD23F"></rect><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="{{train1}}"></animateMotion></g>
+<g><rect x="-8" y="-4" width="16" height="8" rx="3" fill="#FFD23F"></rect><animateMotion dur="11s" begin="3s" repeatCount="indefinite" rotate="auto" path="{{train2}}"></animateMotion></g>
 </svg>
 <sc-for list="{{places}}" as="pl" hint-placeholder-count="13">
 <button type="button" class="pin" onMouseEnter="{{pl.enter}}" onFocus="{{pl.enter}}" onClick="{{pl.enter}}" aria-label="{{pl.name}}" style="position: absolute; left: {{pl.left}}; top: {{pl.top}}; width: 44px; height: 44px; margin: -22px 0 0 -22px; padding: 0; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center">
 <span class="pin-ring" style="position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 2px solid {{pl.c}}; animation-delay: {{pl.d}}"></span>
-<span style="width: {{pl.s}}; height: {{pl.s}}; border-radius: 50%; background: {{pl.c}}; box-shadow: 0 0 0 3px #0C1F38"></span>
+<span style="width: {{pl.s}}; height: {{pl.s}}; border-radius: 50%; background: {{pl.c}}; box-shadow: 0 0 0 3px #121212"></span>
 <span style="position: absolute; left: 30px; top: 50%; transform: translateY(-50%); white-space: nowrap; font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: {{pl.lc}}; opacity: {{pl.lo}}">{{pl.name}}</span>
 </button>
 </sc-for>
 </div>
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 6px 4px; border-top: 1px solid #37506C; margin-top: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 6px 4px; border-top: 1px solid #262626; margin-top: 10px">
 <span class="disp" style="font-size: 30px; line-height: 1; color: {{selColor}}">{{selName}}</span>
-<span style="font-size: 13px; font-weight: 600; color: #849CB4">{{selNote}}</span>
+<span style="font-size: 13px; font-weight: 600; color: #A9A59C">{{selNote}}</span>
 </div>
 </div>
 </div>
@@ -279,16 +279,16 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <section id="lens" aria-label="Travel photos" style="padding: 0 0 120px">
 <div style="padding: 0 clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 36px">
 <h2 class="disp rv" style="margin: 0; font-size: clamp(48px, 7vw, 110px); line-height: .9">Through my <span style="color: {{accent}}">lens</span></h2>
-<a class="btn" href="https://www.instagram.com/sidd.yar/" style="border: 2px solid #FBFBFB; padding: 14px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box">More on @sidd.yar</a>
+<a class="btn" href="https://www.instagram.com/sidd.yar/" style="border: 2px solid #F5F3EE; padding: 14px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box">More on @sidd.yar</a>
 </div>
 <div class="lens-wrap" style="overflow: hidden">
 <div class="marquee lens-track" style="gap: 24px; padding: 20px 0">
 <sc-for list="{{lens}}" as="ph" hint-placeholder-count="12">
 <figure class="lens-card" style="margin: 0 0 0 24px; flex: none; width: clamp(220px, 22vw, 300px); transform: rotate({{ph.rot}})">
-<div style="aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 4px solid {{ph.c}}; background: #0F2440">
+<div style="aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 4px solid {{ph.c}}; background: #1A1A1A">
 <img src="{{ph.src}}" alt="{{ph.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: {{ph.pos}}">
 </div>
-<figcaption class="disp" style="margin-top: 14px; font-size: 26px; line-height: 1; display: flex; justify-content: space-between; gap: 10px"><span>{{ph.name}}</span><span style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #849CB4; padding-top: 6px">{{ph.where}}</span></figcaption>
+<figcaption class="disp" style="margin-top: 14px; font-size: 26px; line-height: 1; display: flex; justify-content: space-between; gap: 10px"><span>{{ph.name}}</span><span style="font-family: Archivo, sans-serif; font-size: 12px; font-weight: 700; color: #A9A59C; padding-top: 6px">{{ph.where}}</span></figcaption>
 </figure>
 </sc-for>
 </div>
@@ -297,7 +297,7 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 
 <!-- INSTAGRAM BLOCK -->
 <section style="padding: 0 clamp(20px, 4vw, 48px) 120px">
-<div class="slant" style="background: {{accent}}; color: #081A2E; border-radius: 34px; overflow: hidden; padding: 60px 0">
+<div class="slant" style="background: {{accent}}; color: #0A0A0A; border-radius: 34px; overflow: hidden; padding: 60px 0">
 <div style="overflow: hidden">
 <div class="marquee disp">
 <sc-for list="{{followLoop}}" as="t" hint-placeholder-count="6">
@@ -307,7 +307,7 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 </div>
 <div style="padding: 36px clamp(24px, 4vw, 56px) 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap">
 <p style="margin: 0; max-width: 460px; font-size: 19px; line-height: 1.5; font-weight: 500">Airport life, cockpit-window views and travel hacks — in Hinglish, for a desi audience.</p>
-<a class="btn" href="https://www.instagram.com/sidd.yar/" style="background: #081A2E; color: #FBFBFB; padding: 18px 30px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Follow @sidd.yar</a>
+<a class="btn" href="https://www.instagram.com/sidd.yar/" style="background: #0A0A0A; color: #F5F3EE; padding: 18px 30px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Follow @sidd.yar</a>
 </div>
 </div>
 </section>
@@ -315,7 +315,7 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <!-- EVENTS -->
 <section id="events" style="padding: 0 clamp(20px, 4vw, 48px) 120px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; align-items: stretch">
-<div class="slant" style="background: #FBFBFB; color: #081A2E; border-radius: 34px; padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; position: relative; overflow: hidden">
+<div class="slant" style="background: #F5F3EE; color: #0A0A0A; border-radius: 34px; padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; position: relative; overflow: hidden">
 <span style="font-weight: 700; font-size: 14px">OFF THE SCREEN</span>
 <div class="disp zp" style="font-size: clamp(140px, 20vw, 300px); line-height: .78; color: {{accent}}">02</div>
 <div>
@@ -324,22 +324,22 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 </div>
 <svg class="badge" width="120" height="120" viewBox="0 0 150 150" aria-hidden="true" style="position: absolute; right: 22px; top: 22px">
 <defs><path id="circ2" d="M75 75 m-55 0 a55 55 0 1 1 110 0 a55 55 0 1 1 -110 0"></path></defs>
-<circle cx="75" cy="75" r="72" fill="#081A2E"></circle>
-<text fill="#FBFBFB" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ2">TECH COORDINATOR • TECH COORDINATOR • </textPath></text>
+<circle cx="75" cy="75" r="72" fill="#0A0A0A"></circle>
+<text fill="#F5F3EE" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ2">TECH COORDINATOR • TECH COORDINATOR • </textPath></text>
 <path d="M75 52 L80 70 L98 75 L80 80 L75 98 L70 80 L52 75 L70 70 Z" fill="{{accent}}"></path>
 </svg>
 </div>
 <div style="display: flex; flex-direction: column; gap: 20px">
-<div class="rv" style="border: 2px solid #FBFBFB; border-radius: 28px; padding: 28px">
-<span style="display: inline-block; background: {{accent}}; color: #081A2E; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">ROLE</span>
+<div class="rv" style="border: 2px solid #F5F3EE; border-radius: 28px; padding: 28px">
+<span style="display: inline-block; background: {{accent}}; color: #0A0A0A; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">ROLE</span>
 <div class="disp" style="margin-top: 16px; font-size: clamp(40px, 5vw, 76px); line-height: .88">Technical Coordinator</div>
-<p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: #D4DAE2">Team Event Enclave, Department of Art &amp; Cultural Affairs (DACA), Chandigarh University — keeping the tech side of events running, from setup to showtime.</p>
+<p style="margin: 14px 0 0; font-size: 17px; line-height: 1.5; color: #CFCBC2">Team Event Enclave, Department of Art &amp; Cultural Affairs (DACA), Chandigarh University — keeping the tech side of events running, from setup to showtime.</p>
 </div>
-<div class="rv" style="border: 2px solid #37506C; background: #0C1F38; border-radius: 28px; padding: 24px 28px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center">
+<div class="rv" style="border: 2px solid #262626; background: #121212; border-radius: 28px; padding: 24px 28px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center">
 <div>
-<span style="display: inline-block; background: #A9B9CB; color: #081A2E; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">SIDE QUEST</span>
+<span style="display: inline-block; background: #B6F36B; color: #0A0A0A; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">SIDE QUEST</span>
 <div class="disp" style="margin-top: 14px; font-size: clamp(36px, 4.2vw, 60px); line-height: .88">Trading the markets</div>
-<p style="margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: #849CB4">Charts open between classes and shoots.</p>
+<p style="margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: #A9A59C">Charts open between classes and shoots.</p>
 </div>
 <div aria-hidden="true" style="position: relative; width: 150px; height: 100px; display: flex; align-items: flex-end; gap: 8px">
 <sc-for list="{{candles}}" as="k" hint-placeholder-count="8">
@@ -361,7 +361,7 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <!-- BADGE WALL + CERTIFICATE -->
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 40px; align-items: center">
 <figure class="badgepic rv" style="margin: 0; --r: -4deg">
-<div class="bob" style="--r: -4deg; border-radius: 22px; overflow: hidden; border: 4px solid #FBFBFB; box-shadow: 0 30px 60px rgba(0,0,0,.5)">
+<div class="bob" style="--r: -4deg; border-radius: 22px; overflow: hidden; border: 4px solid #F5F3EE; box-shadow: 0 30px 60px rgba(0,0,0,.5)">
 <img src="images/fresh-gen-universe-badge.jpg" alt="Fresh-Gen Universe 3.0 Coordinator badge, 1–2 September 2026, Chandigarh University" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover">
 </div>
 <figcaption style="margin-top: 16px; font-size: 14px; font-weight: 600">Fresh-Gen Universe 3.0 · Coordinator</figcaption>
@@ -372,16 +372,16 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 </div>
 <figcaption style="margin-top: 16px; font-size: 14px; font-weight: 600">Team Event Enclave · DACA</figcaption>
 </figure>
-<a class="work rv" href="https://coursera.org/verify/LMRWNY6DO2TE" style="display: flex; flex-direction: column; gap: 18px; text-decoration: none; color: #081A2E; background: #FBFBFB; border-radius: 28px; padding: 30px; position: relative; overflow: hidden">
-<span class="chip" style="align-self: flex-start; background: #081A2E; color: #FBFBFB; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">CERTIFIED</span>
+<a class="work rv" href="https://coursera.org/verify/LMRWNY6DO2TE" style="display: flex; flex-direction: column; gap: 18px; text-decoration: none; color: #0A0A0A; background: #F5F3EE; border-radius: 28px; padding: 30px; position: relative; overflow: hidden">
+<span class="chip" style="align-self: flex-start; background: #0A0A0A; color: #F5F3EE; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700">CERTIFIED</span>
 <span class="disp" style="font-size: clamp(34px, 3.4vw, 50px); line-height: .9">Entrepreneurship Strategy: From Ideation to Exit</span>
 <span style="font-size: 15px; font-weight: 600">HEC Paris · via Coursera · Sep 2026</span>
-<span style="font-size: 14px; font-weight: 700; color: #081A2E; display: inline-flex; align-items: center; gap: 8px">Verify certificate
+<span style="font-size: 14px; font-weight: 700; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px">Verify certificate
 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13 L13 5 M7 5 H13 V11" stroke="currentColor" stroke-width="2"></path></svg></span>
 <svg class="badge" width="110" height="110" viewBox="0 0 150 150" aria-hidden="true" style="position: absolute; right: -24px; bottom: -24px; opacity: .9">
 <defs><path id="circ3" d="M75 75 m-55 0 a55 55 0 1 1 110 0 a55 55 0 1 1 -110 0"></path></defs>
 <circle cx="75" cy="75" r="72" fill="{{accent}}"></circle>
-<text fill="#081A2E" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ3">HEC PARIS • COURSERA • </textPath></text>
+<text fill="#0A0A0A" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ3">HEC PARIS • COURSERA • </textPath></text>
 </svg>
 </a>
 </div>
@@ -391,26 +391,26 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 <section id="contact" style="padding: 0 clamp(20px, 4vw, 48px) 100px">
 <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 28px">
 <h2 class="disp rv" style="margin: 0; font-size: clamp(48px, 7vw, 110px); line-height: .9">Find me</h2>
-<div style="font-size: 16px; color: #D4DAE2">It's <strong style="color: #FBFBFB; font-variant-numeric: tabular-nums">{{clock}}</strong> here in India <span class="blink" style="color: {{accent}}">●</span></div>
+<div style="font-size: 16px; color: #CFCBC2">It's <strong style="color: #F5F3EE; font-variant-numeric: tabular-nums">{{clock}}</strong> here in India <span class="blink" style="color: {{accent}}">●</span></div>
 </div>
-<div style="border-top: 2px solid #FBFBFB">
+<div style="border-top: 2px solid #F5F3EE">
 <sc-for list="{{cities}}" as="c" hint-placeholder-count="4">
-<div class="city" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 0; border-bottom: 2px solid #FBFBFB">
+<div class="city" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 0; border-bottom: 2px solid #F5F3EE">
 <span class="disp" style="font-size: clamp(36px, 5vw, 72px); line-height: .9">{{c.name}}</span>
 <span style="font-size: 15px; font-weight: 500; padding-right: 16px">{{c.note}}</span>
 </div>
 </sc-for>
 </div>
 <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px">
-<a class="btn" href="mailto:sidd25sm@gmail.com" style="background: {{accent}}; color: #081A2E; padding: 20px 34px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Email me</a>
-<a class="btn" href="https://www.linkedin.com/in/siddesh-sule-37778727b" style="border: 2px solid #FBFBFB; padding: 18px 32px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">LinkedIn</a>
-<a class="btn" href="https://www.instagram.com/sidd.yar/" style="border: 2px solid #FBFBFB; padding: 18px 32px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Instagram</a>
+<a class="btn" href="mailto:sidd25sm@gmail.com" style="background: {{accent}}; color: #0A0A0A; padding: 20px 34px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Email me</a>
+<a class="btn" href="https://www.linkedin.com/in/siddesh-sule-37778727b" style="border: 2px solid #F5F3EE; padding: 18px 32px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">LinkedIn</a>
+<a class="btn" href="https://www.instagram.com/sidd.yar/" style="border: 2px solid #F5F3EE; padding: 18px 32px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 17px; min-height: 44px; box-sizing: border-box">Instagram</a>
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer style="border-top: 1px solid #1E3654; padding: 40px clamp(20px, 4vw, 48px) 20px; overflow: hidden">
-<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: #849CB4">
+<footer style="border-top: 1px solid #222; padding: 40px clamp(20px, 4vw, 48px) 20px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: #A9A59C">
 <span>© 2026 Siddesh Sule</span>
 <span>No boring allowed.</span>
 </div>
@@ -419,7 +419,7 @@ a{color:#FBFBFB}a:hover{color:#FFFFFF}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#849CB4","options":["#849CB4","#D4DAE2","#FBFBFB","#5E7A99"]},"$preview":{"width":1440,"height":9600}}'>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF4D2E","options":["#FF4D2E","#FFD23F","#7AA7FF","#FF8FC7"]},"$preview":{"width":1440,"height":9600}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -457,7 +457,7 @@ class Component extends DCLogic {
   renderVals() {
     const self = this;
     const s = this.state;
-    const accent = this.props.accent ?? '#849CB4';
+    const accent = this.props.accent ?? '#FF4D2E';
 
     const onMove = (e) => {
       const r = e.currentTarget.getBoundingClientRect();
@@ -469,17 +469,17 @@ class Component extends DCLogic {
     const leaveList = () => self.setState({ hov: -1 });
 
     const specRaw = [
-      { title: 'Websites', tag: 'WEB DEV', word: 'Clicks that convert', bg: '#D4DAE2' },
-      { title: 'Social media', tag: 'MANAGEMENT', word: 'Feeds that grow', bg: '#FBFBFB' },
-      { title: 'Reels', tag: 'CONTENT', word: 'Watched to the end', bg: '#849CB4' },
-      { title: 'Brand identity', tag: 'DESIGN', word: 'Logos people remember', bg: '#A9B9CB' },
+      { title: 'Websites', tag: 'WEB DEV', word: 'Clicks that convert', bg: '#7AA7FF' },
+      { title: 'Social media', tag: 'MANAGEMENT', word: 'Feeds that grow', bg: '#FFD23F' },
+      { title: 'Reels', tag: 'CONTENT', word: 'Watched to the end', bg: '#FF8FC7' },
+      { title: 'Brand identity', tag: 'DESIGN', word: 'Logos people remember', bg: '#B6F36B' },
       { title: 'Aviation stories', tag: 'TRAVEL', word: 'From the runway', bg: accent },
-      { title: 'Events', tag: 'MANAGEMENT', word: 'Run on the ground', bg: '#5E7A99' }
+      { title: 'Events', tag: 'MANAGEMENT', word: 'Run on the ground', bg: '#C9A2FF' }
     ];
     const events = [
-      { num: '01', title: 'Fresh-Gen Universe 3.0', line: 'Coordinator · 1–2 Sep 2026', status: 'DONE', bg: '#0F2440', ink: '#FBFBFB', cls: '' },
-      { num: '02', title: 'Fresh-Gen Fiesta', line: 'Managed', status: 'DONE', bg: '#0F2440', ink: '#FBFBFB', cls: '' },
-      { num: '03', title: 'Student of the Year', line: 'Up next — coming in the next few weeks', status: 'LOADING', bg: accent, ink: '#081A2E', cls: 'blink' }
+      { num: '01', title: 'Fresh-Gen Universe 3.0', line: 'Coordinator · 1–2 Sep 2026', status: 'DONE', bg: '#1A1A1A', ink: '#F5F3EE', cls: '' },
+      { num: '02', title: 'Fresh-Gen Fiesta', line: 'Managed', status: 'DONE', bg: '#1A1A1A', ink: '#F5F3EE', cls: '' },
+      { num: '03', title: 'Student of the Year', line: 'Up next — coming in the next few weeks', status: 'LOADING', bg: accent, ink: '#0A0A0A', cls: 'blink' }
     ];
     const specs = specRaw.map((x, i) => ({ ...x, num: '0' + (i + 1), enter: () => self.setState({ hov: i }) }));
     const h = s.hov >= 0 ? specRaw[s.hov] : specRaw[0];
@@ -488,16 +488,16 @@ class Component extends DCLogic {
     const pitchWords = ['Your', 'brand', 'shouldn’t', 'fly', 'economy.'];
     const pitch = pitchWords.map((t, i) => ({
       t: t,
-      color: (t === 'fly' || t === 'economy.') ? accent : '#FBFBFB',
+      color: (t === 'fly' || t === 'economy.') ? accent : '#F5F3EE',
       range: 'entry ' + (i * 9) + '% cover ' + (40 + i * 6) + '%'
     }));
 
     const work = [
-      { title: 'Doggo Delights', line: 'My own brand', tag: 'MY BRAND', bg: '#FFFFFF', ink: '#081A2E', img: 'images/doggo-delights-logo.jpg', noImg: false, run: false, fit: 'contain', href: '', cta: '', alt: 'Doggo Delights logo: a smiling dog behind a blue food bowl with a paw print', pos: 'center', big: '', label: '' },
-      { title: 'Hyperloop Pod & Tube', line: '1:50 concept model · in progress', tag: 'BUILDING NOW', bg: '#0D3A63', ink: '#FBFBFB', img: 'images/hyperloop-blueprint.jpg', noImg: false, run: true, fit: 'cover', href: '', cta: '', alt: 'Technical blueprint of a hyperloop pod and low-pressure tube concept model: side elevation, section A–A with air-cushion and magnetic levitation, and plan view', pos: 'left top', big: '', label: '' },
-      { title: 'Runway & ATC Tower', line: 'Working model · airport ops', tag: 'AVIATION MODEL', bg: '#0D3A63', ink: '#FBFBFB', img: 'images/runway-atc-model.jpg', noImg: false, run: false, fit: 'cover', href: '', cta: '', alt: 'Build and layout plan for an airport runway and ATC tower working model: runway lights, taxiway and tower elevation', pos: 'left top', big: '', label: '' },
-      { title: 'Maglev Train', line: 'Working model · transport tech', tag: 'TRANSPORT MODEL', bg: '#0D3A63', ink: '#FBFBFB', img: 'images/maglev-model.jpg', noImg: false, run: false, fit: 'cover', href: '', cta: '', alt: 'Blueprint of a magnetic levitation train model: side elevation, guide rail and repelling magnets', pos: 'left top', big: '', label: '' },
-      { title: 'Your brand next?', line: 'Websites · social · reels', tag: 'OPEN SLOT', bg: accent, ink: '#081A2E', img: '', noImg: true, run: false, fit: 'cover', href: '', cta: '', alt: '', pos: 'center', big: 'YOU?', label: 'LET’S TALK →' }
+      { title: 'Doggo Delights', line: 'My own brand', tag: 'MY BRAND', bg: '#FFFFFF', ink: '#0A0A0A', img: 'images/doggo-delights-logo.jpg', noImg: false, run: false, fit: 'contain', href: '', cta: '', alt: 'Doggo Delights logo: a smiling dog behind a blue food bowl with a paw print', pos: 'center', big: '', label: '' },
+      { title: 'Hyperloop Pod & Tube', line: '1:50 concept model · in progress', tag: 'BUILDING NOW', bg: '#0D3A63', ink: '#F5F3EE', img: 'images/hyperloop-blueprint.jpg', noImg: false, run: true, fit: 'cover', href: '', cta: '', alt: 'Technical blueprint of a hyperloop pod and low-pressure tube concept model: side elevation, section A–A with air-cushion and magnetic levitation, and plan view', pos: 'left top', big: '', label: '' },
+      { title: 'Runway & ATC Tower', line: 'Working model · airport ops', tag: 'AVIATION MODEL', bg: '#0D3A63', ink: '#F5F3EE', img: 'images/runway-atc-model.jpg', noImg: false, run: false, fit: 'cover', href: '', cta: '', alt: 'Build and layout plan for an airport runway and ATC tower working model: runway lights, taxiway and tower elevation', pos: 'left top', big: '', label: '' },
+      { title: 'Maglev Train', line: 'Working model · transport tech', tag: 'TRANSPORT MODEL', bg: '#0D3A63', ink: '#F5F3EE', img: 'images/maglev-model.jpg', noImg: false, run: false, fit: 'cover', href: '', cta: '', alt: 'Blueprint of a magnetic levitation train model: side elevation, guide rail and repelling magnets', pos: 'left top', big: '', label: '' },
+      { title: 'Your brand next?', line: 'Websites · social · reels', tag: 'OPEN SLOT', bg: accent, ink: '#0A0A0A', img: '', noImg: true, run: false, fit: 'cover', href: '', cta: '', alt: '', pos: 'center', big: 'YOU?', label: 'LET’S TALK →' }
     ];
     const rep = (arr, n) => { let o = []; for (let i = 0; i < n; i++) o = o.concat(arr); return o.map((t) => ({ t: t })); };
     const cities = [
@@ -544,16 +544,16 @@ class Component extends DCLogic {
     const places = placeRaw.map((p, i) => {
       const [x, y] = pt[p.name];
       const on = i === (s.place >= 0 ? s.place : homeIdx);
-      const c = p.kind === 'base' ? accent : '#FBFBFB';
+      const c = p.kind === 'base' ? accent : '#F5F3EE';
       return {
         name: p.name, c: c,
         left: (x / 500 * 100).toFixed(2) + '%', top: (y / 560 * 100).toFixed(2) + '%',
         s: on ? '14px' : '10px', d: (-(i * 0.37) % 2.4).toFixed(2) + 's',
-        lc: on ? c : '#849CB4', lo: on || p.kind === 'base' || i % 2 === 0 ? 1 : 0.55,
+        lc: on ? c : '#A9A59C', lo: on || p.kind === 'base' || i % 2 === 0 ? 1 : 0.55,
         enter: () => self.setState({ place: i })
       };
     });
-    const stampRaw = [['Leh', '#D4DAE2', '-8deg'], ['Meghalaya', '#A9B9CB', '6deg'], ['Dzükou', '#849CB4', '-4deg'], ['Nako', '#5E7A99', '9deg'], ['Karnataka', '#FBFBFB', '-10deg'], ['Udupi', accent, '5deg'], ['The South', '#D4DAE2', '-6deg'], ['Gujarat', '#FBFBFB', '8deg'], ['MP', '#A9B9CB', '-3deg'], ['Rajasthan', '#849CB4', '7deg'], ['Kashmir', '#5E7A99', '-9deg'], ['Lisboa', '#D4DAE2', '6deg'], ['Paris', '#849CB4', '-5deg'], ['Brazil', '#A9B9CB', '4deg'], ['Finland', '#D4DAE2', '-7deg']];
+    const stampRaw = [['Leh', '#7AA7FF', '-8deg'], ['Meghalaya', '#B6F36B', '6deg'], ['Dzükou', '#FF8FC7', '-4deg'], ['Nako', '#C9A2FF', '9deg'], ['Karnataka', '#FFD23F', '-10deg'], ['Udupi', accent, '5deg'], ['The South', '#7AA7FF', '-6deg'], ['Gujarat', '#FFD23F', '8deg'], ['MP', '#B6F36B', '-3deg'], ['Rajasthan', '#FF8FC7', '7deg'], ['Kashmir', '#C9A2FF', '-9deg'], ['Lisboa', '#7AA7FF', '6deg'], ['Paris', '#FF8FC7', '-5deg'], ['Brazil', '#B6F36B', '4deg'], ['Finland', '#7AA7FF', '-7deg']];
     const stamps = stampRaw.map((x, i) => ({ name: x[0], c: x[1], rot: x[2], range: 'entry ' + (i * 3) + '% cover ' + (30 + i * 2) + '%' }));
 
     return {
@@ -568,41 +568,41 @@ class Component extends DCLogic {
       places, stamps,
       lens: (() => {
         const ph = [
-          { name: 'Nako', where: 'HIMACHAL', src: 'images/nako.jpg', alt: 'Nako village and lake under stormy clouds in the Himalayas', pos: 'center', c: '#849CB4', rot: '-3deg' },
-          { name: 'Bernina Express', where: 'SWITZERLAND', src: 'images/lens-bernina.jpg', alt: 'Red mountain train curving towards snowy peaks and a glacier', pos: 'center', c: '#FBFBFB', rot: '2deg' },
-          { name: 'Spiti', where: 'HIMACHAL', src: 'images/monastery.jpg', alt: 'Colourful Buddhist monastery against mountains and clouds in Spiti Valley', pos: 'center', c: '#D4DAE2', rot: '-2deg' },
-          { name: 'Eiffel at night', where: 'PARIS', src: 'images/lens-eiffel.jpg', alt: 'The Eiffel Tower lit up in gold against a black night sky', pos: 'center', c: '#A9B9CB', rot: '3deg' },
-          { name: 'Ganga Aarti', where: 'VARANASI', src: 'images/lens-ganga-aarti.jpg', alt: 'Priest raising a blazing brass lamp during the Ganga Aarti', pos: 'center', c: '#5E7A99', rot: '-3deg' },
+          { name: 'Nako', where: 'HIMACHAL', src: 'images/nako.jpg', alt: 'Nako village and lake under stormy clouds in the Himalayas', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'Bernina Express', where: 'SWITZERLAND', src: 'images/lens-bernina.jpg', alt: 'Red mountain train curving towards snowy peaks and a glacier', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'Spiti', where: 'HIMACHAL', src: 'images/monastery.jpg', alt: 'Colourful Buddhist monastery against mountains and clouds in Spiti Valley', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Eiffel at night', where: 'PARIS', src: 'images/lens-eiffel.jpg', alt: 'The Eiffel Tower lit up in gold against a black night sky', pos: 'center', c: '#B6F36B', rot: '3deg' },
+          { name: 'Ganga Aarti', where: 'VARANASI', src: 'images/lens-ganga-aarti.jpg', alt: 'Priest raising a blazing brass lamp during the Ganga Aarti', pos: 'center', c: '#C9A2FF', rot: '-3deg' },
           { name: 'Lisboa', where: 'PORTUGAL', src: 'images/lisboa.jpg', alt: 'Comic-style mural and graffiti in an archway in Lisbon', pos: 'center', c: accent, rot: '2deg' },
-          { name: 'Northern lights', where: 'ARCTIC', src: 'images/lens-northern-lights.jpg', alt: 'Pink and green aurora over a snowy landscape full of stars', pos: 'center', c: '#849CB4', rot: '-3deg' },
-          { name: 'Spiti village', where: 'HIMACHAL', src: 'images/lens-spiti-village.jpg', alt: 'White village houses below striped snowy mountains in Spiti', pos: 'center', c: '#FBFBFB', rot: '2deg' },
-          { name: 'Hollywood', where: 'LOS ANGELES', src: 'images/lens-hollywood.jpg', alt: 'The Hollywood sign on a green hill under storm clouds at sunset', pos: 'center', c: '#D4DAE2', rot: '-2deg' },
-          { name: 'Catching waves', where: 'BRAZIL', src: 'images/surf.jpg', alt: 'Surfer with a board standing on rocks facing the waves in Brazil', pos: 'center 70%', c: '#A9B9CB', rot: '3deg' },
-          { name: 'Prem Mandir', where: 'VRINDAVAN', src: 'images/lens-prem-mandir.jpg', alt: 'Carved white marble temple under a pink and gold sunset sky', pos: 'center', c: '#5E7A99', rot: '-3deg' },
+          { name: 'Northern lights', where: 'ARCTIC', src: 'images/lens-northern-lights.jpg', alt: 'Pink and green aurora over a snowy landscape full of stars', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'Spiti village', where: 'HIMACHAL', src: 'images/lens-spiti-village.jpg', alt: 'White village houses below striped snowy mountains in Spiti', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'Hollywood', where: 'LOS ANGELES', src: 'images/lens-hollywood.jpg', alt: 'The Hollywood sign on a green hill under storm clouds at sunset', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Catching waves', where: 'BRAZIL', src: 'images/surf.jpg', alt: 'Surfer with a board standing on rocks facing the waves in Brazil', pos: 'center 70%', c: '#B6F36B', rot: '3deg' },
+          { name: 'Prem Mandir', where: 'VRINDAVAN', src: 'images/lens-prem-mandir.jpg', alt: 'Carved white marble temple under a pink and gold sunset sky', pos: 'center', c: '#C9A2FF', rot: '-3deg' },
           { name: 'Regent Street', where: 'LONDON', src: 'images/lens-london.jpg', alt: 'White taxi and red double-decker bus under Union Jack bunting', pos: 'center', c: accent, rot: '2deg' },
-          { name: 'Husky ride', where: 'FINLAND', src: 'images/finland.jpg', alt: 'Husky sled ride through a snowy forest in Finland', pos: 'center', c: '#849CB4', rot: '-3deg' },
-          { name: 'The ghats', where: 'VARANASI', src: 'images/lens-manikarnika.jpg', alt: 'Fires and smoke on the ghats of Varanasi at night', pos: 'center', c: '#FBFBFB', rot: '2deg' },
-          { name: 'Freefall', where: 'SKYDIVING', src: 'images/lens-freefall.jpg', alt: 'Skydiver in freefall high above clouds and green fields', pos: 'center', c: '#D4DAE2', rot: '-2deg' },
-          { name: 'Nap time', where: 'WILDLIFE', src: 'images/lens-jaguar.jpg', alt: 'A jaguar asleep on a log with its paws hanging down', pos: 'center', c: '#A9B9CB', rot: '3deg' },
-          { name: 'Paris', where: 'FRANCE', src: 'images/paris.jpg', alt: 'Pink fairytale castle under blue sky at Disneyland Paris', pos: 'center 40%', c: '#5E7A99', rot: '-3deg' },
+          { name: 'Husky ride', where: 'FINLAND', src: 'images/finland.jpg', alt: 'Husky sled ride through a snowy forest in Finland', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'The ghats', where: 'VARANASI', src: 'images/lens-manikarnika.jpg', alt: 'Fires and smoke on the ghats of Varanasi at night', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'Freefall', where: 'SKYDIVING', src: 'images/lens-freefall.jpg', alt: 'Skydiver in freefall high above clouds and green fields', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Nap time', where: 'WILDLIFE', src: 'images/lens-jaguar.jpg', alt: 'A jaguar asleep on a log with its paws hanging down', pos: 'center', c: '#B6F36B', rot: '3deg' },
+          { name: 'Paris', where: 'FRANCE', src: 'images/paris.jpg', alt: 'Pink fairytale castle under blue sky at Disneyland Paris', pos: 'center 40%', c: '#C9A2FF', rot: '-3deg' },
           { name: 'Chai with a view', where: 'MOUNTAINS', src: 'images/lens-chai.jpg', alt: 'Cup of tea on a wooden railing facing snowy mountains', pos: 'center', c: accent, rot: '2deg' },
-          { name: 'Alpine village', where: 'THE ALPS', src: 'images/lens-alpine.jpg', alt: 'Wooden houses beside a turquoise lake below a misty peak', pos: 'center', c: '#849CB4', rot: '-3deg' },
-          { name: 'Desert days', where: 'DESERT', src: 'images/lens-desert.jpg', alt: 'Standing in the desert wearing a red and white keffiyeh and sunglasses', pos: 'center', c: '#FBFBFB', rot: '2deg' },
-          { name: 'On top', where: 'HIMALAYAS', src: 'images/lens-summit.jpg', alt: 'Arms raised on a rocky summit above the clouds', pos: 'center', c: '#D4DAE2', rot: '-2deg' },
-          { name: 'Above it all', where: 'PARAGLIDING', src: 'images/paraglide.jpg', alt: 'Paraglider with a yellow wing above clouds and a lake', pos: 'center 35%', c: '#A9B9CB', rot: '3deg' },
-          { name: 'Moonrise', where: 'NIGHT SKY', src: 'images/lens-moonrise.jpg', alt: 'An orange moon reflected on dark water', pos: 'center 30%', c: '#5E7A99', rot: '-3deg' }
+          { name: 'Alpine village', where: 'THE ALPS', src: 'images/lens-alpine.jpg', alt: 'Wooden houses beside a turquoise lake below a misty peak', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'Desert days', where: 'DESERT', src: 'images/lens-desert.jpg', alt: 'Standing in the desert wearing a red and white keffiyeh and sunglasses', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'On top', where: 'HIMALAYAS', src: 'images/lens-summit.jpg', alt: 'Arms raised on a rocky summit above the clouds', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Above it all', where: 'PARAGLIDING', src: 'images/paraglide.jpg', alt: 'Paraglider with a yellow wing above clouds and a lake', pos: 'center 35%', c: '#B6F36B', rot: '3deg' },
+          { name: 'Moonrise', where: 'NIGHT SKY', src: 'images/lens-moonrise.jpg', alt: 'An orange moon reflected on dark water', pos: 'center 30%', c: '#C9A2FF', rot: '-3deg' }
         ];
         return ph.concat(ph);
       })(),
       candles: [[18, 8], [22, 4], [16, 16], [28, 14], [20, 28], [30, 26], [18, 44], [32, 40]].map((v, i) => {
         const up = i % 3 !== 1;
-        return { h: v[0] + 'px', mb: v[1] + 'px', c: up ? '#A9B9CB' : accent, d: (i * 0.12).toFixed(2) + 's' };
+        return { h: v[0] + 'px', mb: v[1] + 'px', c: up ? '#B6F36B' : accent, d: (i * 0.12).toFixed(2) + 's' };
       }),
       trainD: trains.map((t) => line(t[0], t[1])).join(' '),
       flightD: flights.map((f) => arc(f[0], f[1])).join(' '),
       fly1: arc('Mumbai', 'Bengaluru'), fly2: arc('Bengaluru', 'Chandigarh'),
       train1: line('Delhi', 'Chandigarh'), train2: line('Mumbai', 'Lucknow'),
-      selName: sel.name, selNote: sel.note, selColor: sel.kind === 'base' ? accent : '#FBFBFB',
+      selName: sel.name, selNote: sel.note, selColor: sel.kind === 'base' ? accent : '#F5F3EE',
       loudLoop: rep(['No boring', 'Websites', 'Social', 'Reels', 'Events', 'Trading', 'Desi energy'], 2),
       quietLoop: rep(['Leh', 'Spiti', 'Nako', 'Meghalaya', 'Dzükou', 'Udupi', 'Lisboa', 'Paris', 'Brazil', 'Finland', 'Instagram'], 2),
       followLoop: rep(['Follow the flight'], 4)
