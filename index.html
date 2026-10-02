@@ -8,7 +8,7 @@
 <script src="./support.js"></script>
 <style id="stack-spread-css">
 /* Stack Spread — scroll-driven photo scatter (vanilla port of the React component) */
-.ss-stage{position:relative;width:100%;height:350vh;background:#0A0A0A}
+.ss-stage{position:absolute;left:0;top:0;z-index:5;width:100%;height:350vh;background:#0A0A0A;color:#F5F3EE;font-family:'Archivo',system-ui,sans-serif}
 .ss-sticky{position:sticky;top:var(--ss-nav,0px);height:calc(100vh - var(--ss-nav,0px));width:100%;overflow:hidden}
 .ss-copy{pointer-events:none;position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;text-align:center;opacity:0;will-change:opacity,transform}
 .ss-copy h2{margin:0;font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(56px,9vw,160px);line-height:.88;letter-spacing:-.01em;color:#F5F3EE}
@@ -129,17 +129,8 @@ a{color:#F5F3EE}a:hover{color:#FFFFFF}
 </div>
 </nav>
 
-<!-- STACK SPREAD -->
-<section class="ss-stage" id="stack-spread" aria-label="Hi, I'm Sidd">
-<div class="ss-sticky">
-<div class="ss-copy" data-ss="copy">
-<h2><span class="ss-dim">Hi, I'm</span> Sidd<span class="ss-dot">.</span></h2>
-<p>Aviation student at Chandigarh University, freelance web developer and social media creator, sharing travel and aviation stories.</p>
-</div>
-<div class="ss-cards" data-ss="cards"></div>
-<div class="ss-hint" data-ss="hint"><span>Scroll</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
-</div>
-</section>
+<!-- STACK SPREAD (placeholder; the section itself is built by stack-spread-js outside the page template) -->
+<div id="stack-spread-slot" style="height: 350vh"></div>
 
 <!-- HERO -->
 <header id="top" style="position: relative; padding: clamp(60px, 8vw, 110px) clamp(20px, 4vw, 48px) 80px; min-height: 640px">
@@ -635,30 +626,45 @@ class Component extends DCLogic {
     {src:"images/surf.jpg",alt:"Surfing at sunset",so:[8,7],sr:3,t:[2,36,.8,20,26],sm:[-22,40],z:8},
     {src:"images/paraglide.jpg",alt:"Paragliding above the clouds",so:[20,12],sr:-7,t:[30,34,.9,16,20],sm:[22,40],z:9}
   ];
+  var HTML='<div class="ss-sticky">'+
+    '<div class="ss-copy" data-ss="copy"><h2><span class="ss-dim">Hi, I\'m</span> Sidd<span class="ss-dot">.</span></h2>'+
+    '<p>Aviation student at Chandigarh University, freelance web developer and social media creator, sharing travel and aviation stories.</p></div>'+
+    '<div class="ss-cards" data-ss="cards"></div>'+
+    '<div class="ss-hint" data-ss="hint"><span>Scroll</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>'+
+    '</div>';
   var START=.12,END=.9,PX=2.6,PY=2.2,STACK=.82,FADE=.3;
   function clamp(v){return v<0?0:v>1?1:v}
   function lerp(a,b,t){return a+(b-a)*t}
-  function init(stage){
-    if(stage.__ss)return; stage.__ss=true;
+  var stage=null;
+  function init(){
+    // The section lives directly in <body>, outside the page template, so the
+    // template's renderer never sees (or trips over) these nodes. It is laid
+    // over the empty #stack-spread-slot placeholder every frame.
+    stage=document.createElement("section");stage.className="ss-stage";stage.id="stack-spread";
+    stage.setAttribute("aria-label","Hi, I'm Sidd");stage.innerHTML=HTML;document.body.appendChild(stage);
     var wrap=stage.querySelector('[data-ss="cards"]'),copy=stage.querySelector('[data-ss="copy"]'),hint=stage.querySelector('[data-ss="hint"]');
-    wrap.textContent="";
-    var nav=document.querySelector("nav");function setNav(){stage.style.setProperty("--ss-nav",(nav?nav.offsetHeight:0)+"px")}setNav();addEventListener("resize",setNav);
     var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,coarse=matchMedia("(pointer: coarse)");
     var els=CARDS.map(function(c){var d=document.createElement("div");d.className="ss-card";d.style.zIndex=c.z;
       var f=document.createElement("div");f.className="ss-face";var im=document.createElement("img");
-      im.src=c.src;im.alt=c.alt;im.draggable=false;im.loading="eager";f.appendChild(im);d.appendChild(f);wrap.appendChild(d);return d;});
-    var raw={x:0,y:0},pt={x:0,y:0},vel={x:0,y:0},last=performance.now();
+      im.src=c.src;im.alt=c.alt;im.draggable=false;f.appendChild(im);d.appendChild(f);wrap.appendChild(d);return d;});
+    var raw={x:0,y:0},pt={x:0,y:0},vel={x:0,y:0},last=performance.now(),navH=-1;
     addEventListener("pointermove",function(e){raw.x=e.clientX/innerWidth*2-1;raw.y=e.clientY/innerHeight*2-1},{passive:true});
     document.addEventListener("pointerleave",function(){raw.x=0;raw.y=0});
     function frame(now){
-      if(!stage.isConnected)return;
       var dt=Math.min(.05,(now-last)/1000);last=now;
-      var r=stage.getBoundingClientRect(),total=r.height-innerHeight;
-      var p=clamp((clamp(-r.top/total)-START)/(END-START));
+      var slot=document.getElementById("stack-spread-slot");
+      if(!slot){stage.style.display="none";requestAnimationFrame(frame);return;}
+      stage.style.display="";
+      var sr=slot.getBoundingClientRect();
+      stage.style.top=(sr.top+scrollY)+"px";stage.style.height=sr.height+"px";
+      var nav=document.querySelector("nav"),nh=nav?nav.offsetHeight:0;
+      if(nh!==navH){navH=nh;stage.style.setProperty("--ss-nav",nh+"px");}
+      var total=sr.height-innerHeight;
+      var p=clamp((clamp(-sr.top/total)-START)/(END-START));
       var small=coarse.matches,par=!reduce&&!small,spread=p>=.999;
       var tx=spread&&par?raw.x:0,ty=spread&&par?raw.y:0;
       [["x",tx],["y",ty]].forEach(function(a){var k=a[0];var f=-90*(pt[k]-a[1])-22*vel[k];vel[k]+=f/.6*dt;pt[k]+=vel[k]*dt;});
-      if(r.bottom>-100&&r.top<innerHeight+100){
+      if(sr.bottom>-100&&sr.top<innerHeight+100){
         CARDS.forEach(function(c,i){
           var ex=small?Math.sign(c.sm[0])*22:c.t[0],ey=small?c.sm[1]:c.t[1];
           var w=small?40:c.t[3],h=small?20:c.t[4],rest=small?.72:c.t[2];
@@ -675,10 +681,7 @@ class Component extends DCLogic {
     }
     requestAnimationFrame(frame);
   }
-  // the page template renders after load, so wait for the section to appear
-  function scan(){var s=document.getElementById("stack-spread");if(s&&!s.__ss)init(s);}
-  new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true});
-  document.addEventListener("DOMContentLoaded",scan);scan();
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
 })();
 </script>
 </body>
