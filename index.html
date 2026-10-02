@@ -74,7 +74,7 @@ a{color:#F5F3EE}a:hover{color:#FFFFFF}
 .btn:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 #F5F3EE}
 .city{transition:background .35s,color .35s,padding .45s cubic-bezier(.16,1,.3,1)}
 .city:hover{background:#F5F3EE;color:#0A0A0A;padding-left:28px}
-.lens-track{animation-duration:55s}
+.lens-track{animation-duration:180s}
 .lens-wrap:hover .lens-track{animation-play-state:paused}
 .lens-card{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
 .lens-card:hover{transform:rotate(0) scale(1.08) !important;z-index:3}
@@ -569,12 +569,28 @@ class Component extends DCLogic {
       lens: (() => {
         const ph = [
           { name: 'Nako', where: 'HIMACHAL', src: 'images/nako.jpg', alt: 'Nako village and lake under stormy clouds in the Himalayas', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
-          { name: 'Spiti', where: 'HIMACHAL', src: 'images/monastery.jpg', alt: 'Colourful Buddhist monastery against mountains and clouds in Spiti Valley', pos: 'center', c: '#FFD23F', rot: '2deg' },
-          { name: 'Lisboa', where: 'PORTUGAL', src: 'images/lisboa.jpg', alt: 'Comic-style mural and graffiti in an archway in Lisbon', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Bernina Express', where: 'SWITZERLAND', src: 'images/lens-bernina.jpg', alt: 'Red mountain train curving towards snowy peaks and a glacier', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'Spiti', where: 'HIMACHAL', src: 'images/monastery.jpg', alt: 'Colourful Buddhist monastery against mountains and clouds in Spiti Valley', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Eiffel at night', where: 'PARIS', src: 'images/lens-eiffel.jpg', alt: 'The Eiffel Tower lit up in gold against a black night sky', pos: 'center', c: '#B6F36B', rot: '3deg' },
+          { name: 'Ganga Aarti', where: 'VARANASI', src: 'images/lens-ganga-aarti.jpg', alt: 'Priest raising a blazing brass lamp during the Ganga Aarti', pos: 'center', c: '#C9A2FF', rot: '-3deg' },
+          { name: 'Lisboa', where: 'PORTUGAL', src: 'images/lisboa.jpg', alt: 'Comic-style mural and graffiti in an archway in Lisbon', pos: 'center', c: accent, rot: '2deg' },
+          { name: 'Northern lights', where: 'ARCTIC', src: 'images/lens-northern-lights.jpg', alt: 'Pink and green aurora over a snowy landscape full of stars', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'Spiti village', where: 'HIMACHAL', src: 'images/lens-spiti-village.jpg', alt: 'White village houses below striped snowy mountains in Spiti', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'Hollywood', where: 'LOS ANGELES', src: 'images/lens-hollywood.jpg', alt: 'The Hollywood sign on a green hill under storm clouds at sunset', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
           { name: 'Catching waves', where: 'BRAZIL', src: 'images/surf.jpg', alt: 'Surfer with a board standing on rocks facing the waves in Brazil', pos: 'center 70%', c: '#B6F36B', rot: '3deg' },
+          { name: 'Prem Mandir', where: 'VRINDAVAN', src: 'images/lens-prem-mandir.jpg', alt: 'Carved white marble temple under a pink and gold sunset sky', pos: 'center', c: '#C9A2FF', rot: '-3deg' },
+          { name: 'Regent Street', where: 'LONDON', src: 'images/lens-london.jpg', alt: 'White taxi and red double-decker bus under Union Jack bunting', pos: 'center', c: accent, rot: '2deg' },
+          { name: 'Husky ride', where: 'FINLAND', src: 'images/finland.jpg', alt: 'Husky sled ride through a snowy forest in Finland', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'The ghats', where: 'VARANASI', src: 'images/lens-manikarnika.jpg', alt: 'Fires and smoke on the ghats of Varanasi at night', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'Freefall', where: 'SKYDIVING', src: 'images/lens-freefall.jpg', alt: 'Skydiver in freefall high above clouds and green fields', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Nap time', where: 'WILDLIFE', src: 'images/lens-jaguar.jpg', alt: 'A jaguar asleep on a log with its paws hanging down', pos: 'center', c: '#B6F36B', rot: '3deg' },
           { name: 'Paris', where: 'FRANCE', src: 'images/paris.jpg', alt: 'Pink fairytale castle under blue sky at Disneyland Paris', pos: 'center 40%', c: '#C9A2FF', rot: '-3deg' },
-          { name: 'Husky ride', where: 'FINLAND', src: 'images/finland.jpg', alt: 'Husky sled ride through a snowy forest in Finland', pos: 'center', c: '#7AA7FF', rot: '3deg' },
-          { name: 'Above it all', where: 'PARAGLIDING', src: 'images/paraglide.jpg', alt: 'Paraglider with a yellow wing above clouds and a lake', pos: 'center 35%', c: accent, rot: '2deg' }
+          { name: 'Chai with a view', where: 'MOUNTAINS', src: 'images/lens-chai.jpg', alt: 'Cup of tea on a wooden railing facing snowy mountains', pos: 'center', c: accent, rot: '2deg' },
+          { name: 'Alpine village', where: 'THE ALPS', src: 'images/lens-alpine.jpg', alt: 'Wooden houses beside a turquoise lake below a misty peak', pos: 'center', c: '#FF8FC7', rot: '-3deg' },
+          { name: 'Desert days', where: 'DESERT', src: 'images/lens-desert.jpg', alt: 'Standing in the desert wearing a red and white keffiyeh and sunglasses', pos: 'center', c: '#FFD23F', rot: '2deg' },
+          { name: 'On top', where: 'HIMALAYAS', src: 'images/lens-summit.jpg', alt: 'Arms raised on a rocky summit above the clouds', pos: 'center', c: '#7AA7FF', rot: '-2deg' },
+          { name: 'Above it all', where: 'PARAGLIDING', src: 'images/paraglide.jpg', alt: 'Paraglider with a yellow wing above clouds and a lake', pos: 'center 35%', c: '#B6F36B', rot: '3deg' },
+          { name: 'Moonrise', where: 'NIGHT SKY', src: 'images/lens-moonrise.jpg', alt: 'An orange moon reflected on dark water', pos: 'center 30%', c: '#C9A2FF', rot: '-3deg' }
         ];
         return ph.concat(ph);
       })(),
