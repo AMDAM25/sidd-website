@@ -130,29 +130,7 @@ a{color:#F5F3EE}a:hover{color:#FFFFFF}
 </nav>
 
 <!-- STACK SPREAD (placeholder; the section itself is built by stack-spread-js outside the page template) -->
-<div id="stack-spread-slot" style="height: 350vh"></div>
-
-<!-- HERO -->
-<header id="top" style="position: relative; padding: clamp(60px, 8vw, 110px) clamp(20px, 4vw, 48px) 80px; min-height: 640px">
-<div class="disp" style="font-size: clamp(64px, 12.5vw, 210px); line-height: 0.86; position: relative; z-index: 2">
-<div><span class="pop" style="animation-delay: .1s">Bye</span> <span class="pop" style="animation-delay: .2s">bye</span></div>
-<div style="color: #6A6862; min-height: 0.86em; white-space: nowrap"><span class="strike {{strikeCls}}">{{typed}}</span><span class="caret"></span></div>
-<div><span class="pop" style="animation-delay: .5s">hello</span> <span class="pop" style="animation-delay: .65s; color: {{accent}}">Sidd.</span></div>
-</div>
-<p style="margin: 34px 0 0; max-width: 480px; font-size: 19px; line-height: 1.5; color: #CFCBC2; position: relative; z-index: 2">Websites, social media and Hinglish travel content for desi brands that want to be <strong style="color: #F5F3EE">seen</strong> — made by an aviation student who doesn't do boring.</p>
-
-<div class="hero-collage" aria-hidden="true" style="position: absolute; right: clamp(10px, 5vw, 80px); top: 40px; width: min(40vw, 460px); height: 520px; z-index: 1">
-<div class="bob" style="--r: -8deg; position: absolute; right: 30%; top: 30px; width: 54%; aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 5px solid #FFD23F; box-sizing: border-box; box-shadow: 0 30px 60px rgba(0,0,0,.5)"><img src="images/paraglide.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 35%"></div>
-<div class="bob bob2" style="--r: 7deg; position: absolute; right: 0; top: 150px; width: 48%; aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 5px solid #7AA7FF; box-sizing: border-box; box-shadow: 0 30px 60px rgba(0,0,0,.5)"><img src="images/surf.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 70%"></div>
-<div class="bob bob3" style="--r: -3deg; position: absolute; right: 38%; top: 300px; width: 44%; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; border: 5px solid #FF8FC7; box-sizing: border-box; box-shadow: 0 30px 60px rgba(0,0,0,.5)"><img src="images/nako.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 60%"></div>
-<svg class="badge" width="150" height="150" viewBox="0 0 150 150" style="position: absolute; left: -20px; top: 230px">
-<defs><path id="circ" d="M75 75 m-55 0 a55 55 0 1 1 110 0 a55 55 0 1 1 -110 0"></path></defs>
-<circle cx="75" cy="75" r="72" fill="{{accent}}"></circle>
-<text fill="#0A0A0A" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="17" letter-spacing="3"><textPath href="#circ">OPEN FOR WORK • OPEN FOR WORK • </textPath></text>
-<path d="M60 75 L90 75 M78 63 L90 75 L78 87" stroke="#0A0A0A" stroke-width="4" fill="none" stroke-linecap="round"></path>
-</svg>
-</div>
-</header>
+<div id="top" style="padding-bottom: 80px"><div id="stack-spread-slot" style="height: 350vh"></div></div>
 
 <!-- LOUD MARQUEES -->
 <div style="transform: rotate(-3deg); margin: 0 -40px; position: relative; z-index: 3">
@@ -622,9 +600,9 @@ class Component extends DCLogic {
     {src:"images/paris.jpg",alt:"Castle in Paris",so:[-16,0],sr:-4,t:[-36,-2,.9,15,32],sm:[-22,-19],z:4},
     {src:"images/finland.jpg",alt:"Husky sledding in Finland",so:[1,-10],sr:-2,t:[6,-28,.8,25,30],sm:[22,-19],z:5},
     {src:"images/reel.jpg",alt:"Sidd on a jeep in the hills",so:[18,1],sr:6,t:[37,6,.8,18,32],sm:[-22,20],z:6},
-    {src:"images/nako.jpg",alt:"Nako village",so:[-6,10],sr:6,t:[-24,34,.9,22,25],sm:[22,20],z:7},
-    {src:"images/surf.jpg",alt:"Surfing at sunset",so:[8,7],sr:3,t:[2,36,.8,20,26],sm:[-22,40],z:8},
-    {src:"images/paraglide.jpg",alt:"Paragliding above the clouds",so:[20,12],sr:-7,t:[30,34,.9,16,20],sm:[22,40],z:9}
+    {src:"images/nako.jpg",alt:"Nako village",so:[-6,10],sr:6,t:[-24,30,.9,22,25],sm:[22,20],z:7},
+    {src:"images/surf.jpg",alt:"Surfing at sunset",so:[8,7],sr:3,t:[2,31,.8,20,26],sm:[-22,40],z:8},
+    {src:"images/paraglide.jpg",alt:"Paragliding above the clouds",so:[20,12],sr:-7,t:[30,30,.9,16,20],sm:[22,40],z:9}
   ];
   var HTML='<div class="ss-sticky">'+
     '<div class="ss-copy" data-ss="copy"><h2><span class="ss-dim">Hi, I\'m</span> Sidd<span class="ss-dot">.</span></h2>'+
